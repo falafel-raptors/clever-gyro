@@ -52,3 +52,25 @@ Project One for Codefellows 201, A game!
   * I want to eliminate edge cases.
   * I want to be able to add a easy/medium/hard mode - increased ranges and multiple operators for difficult purposes.
   
+## Conflict Plan
+* What will our group do when it encounters conflict?
+  * put it to a vote
+    * every day one person gets a double vote, only in the event of a tie
+
+* How will you raise concerns to members who are not adiquately contributing?
+  * in our daily standup
+  * start from a place of support with a whole message
+  * "I" statements
+
+* What is your process to resolve conflicts?
+  * ensure members are fed and sufficiently watered
+  * allow members to take reasonably timed breaks
+  * create a safe space where everyone is able to be heard and valued
+  * to change our coding environment to ensure members are happy and productive
+
+* How and when will you escalate the conflict resolution?
+  * circle conflict resolution moment
+    * close laptops
+    * use "talking stick" to ensure all concerns are aired and expressed
+    * when circle ends, the issue is CLOSED. Resolution complete.
+  * if circle cannot solve, bring issue to the TA first, then Nicholas last

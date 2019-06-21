@@ -24,6 +24,7 @@ Project One for Codefellows 201, A game!
 * Display score board
   * local storage
 * Make instructions modal
+* Multiple games completed to be considered a win - victory count
 * Timer
   * timer manipulation for a randomly generated number
 * Multiple Operators
@@ -34,10 +35,20 @@ Project One for Codefellows 201, A game!
 ## User Stories
 * USER
   * I want an intuitive U/I that is easily understood.
+  * I want a visually appealing site.
+  * I want to be able to play the game on both mobile and non-mobile devices.
   * I want to know the rules before playing the game.
   * I want to keep my data - scores and place in game - if I navigate away from the page.
+  * I want a game that is both fun and challenging.
+  * I want to be able to choose if I need to complete the game in a specified amount of time
+  * I want to be able to choose if the numbers vanish from the buttons.
 
 * DEVELOPER
+  * I want DRY and readable code.
+  * I want modular code to make building the product easy.
   * I would like to have the numbers balanced for ease of play for the user (2 positive and 2 negative).
   * I would like to only show the instructions to new users, not to repeat users - unless requested.
   * I want to incorporate an easter egg into the game - to complete the game you reach the number and then get to navigate to the About Us page
+  * I want to eliminate edge cases.
+  * I want to be able to add a easy/medium/hard mode - increased ranges and multiple operators for difficult purposes.
+  

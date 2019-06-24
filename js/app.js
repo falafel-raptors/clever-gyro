@@ -18,7 +18,7 @@ var gameState = {
 //generate first four numbers
 //function to check win condition
 //function to reset game
-//function to target modal 
+//function to target modal
 //function to save game state
 //function to load game state
 //function to handle clicks

@@ -2,7 +2,8 @@
 
 // globals
 var gameState = {
-  rulesView: true,
+  hasSeenRules: false,
+  rulesView: false,
   victoryView: false,
   targetValue: 0,
   currentValue: 0,
@@ -30,8 +31,11 @@ var gameState = {
 function init(){
   if(localStorage.gameState){
     gameState = returnFromLocal('gameState');
+    buildTarget(gameState.targetValue);
     buildCard();
   }else{
+    generateTarget();
+    writeRules('modal');
     generateDeck();
   }
   console.log('gamestate', gameState);

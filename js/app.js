@@ -16,6 +16,15 @@ var gameState = {
 //function to generate target value
 //function to generate cards
 //generate first four numbers
+//function to check win condition
+//function to reset game
+//function to target modal 
+//function to save game state
+//function to load game state
+//function to handle clicks
+//function to handle keys
+//CSS
+
 
 
 function init(){

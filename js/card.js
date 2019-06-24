@@ -1,4 +1,5 @@
 'use strict';
+/*global gameState */
 
 //call ran num by range
 //assign operator +/-
@@ -10,27 +11,28 @@
 
 function buildCard (){
   //clear card
-  clearHTML('up');
-  clearHTML('down');
-  clearHTML('left');
-  clearHTML('right');
+  clearHTML('upButton');
+  clearHTML('downButton');
+  clearHTML('leftButton');
+  clearHTML('rightButton');
+  clearHTML('currentValue');
 
 
   //build the card to display
-  htmlTextHack('p', gameState.cardUp.str, 'up');
-  htmlTextHack('p', gameState.cardDown.str, 'down');
-  htmlTextHack('p', gameState.cardLeft.str, 'left');
-  htmlTextHack('p', gameState.cardRight.str, 'right');
-  
+  htmlTextHack('p', '-'+gameState.cardUp.str, 'upButton');
+  htmlTextHack('p', '-'+gameState.cardDown.str, 'downButton');
+  htmlTextHack('p', gameState.cardLeft.str, 'leftButton');
+  htmlTextHack('p', gameState.cardRight.str, 'rightButton');
+  htmlTextHack('p', String(gameState.currentValue), 'currentValue');
 }
 
 
 function generateDeck (){
-  var up = randomInclusiveNumGen(1,10);
-  var down = randomInclusiveNumGen(1,10);
+  var up = randomInclusiveNumGen(gameState.minRange, gameState.maxRange);
+  var down = randomInclusiveNumGen(gameState.minRange, gameState.maxRange);
   //TODO: drop the negative number later when we write modules
-  var left = randomInclusiveNumGen(1,10)*(-1);
-  var right = randomInclusiveNumGen(1,10)*(-1);
+  var left = randomInclusiveNumGen(gameState.minRange, gameState.maxRange);
+  var right = randomInclusiveNumGen(gameState.minRange, gameState.maxRange);
 
   var cardUp = {
     int: up,
@@ -58,7 +60,7 @@ function generateDeck (){
   gameState.cardDown = cardDown;
   gameState.cardLeft = cardLeft;
   gameState.cardRight = cardRight;
-  console.log(gameState);
+  // console.log(gameState);
 
   buildCard();
 

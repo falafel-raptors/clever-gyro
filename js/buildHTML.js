@@ -39,4 +39,10 @@ function htmlNodeAdd(element, parentID){
   appendChildtoParent(node, current);
 }
 
+//clear text
+function clearHTML(parent){
+  var clearMe = domReferenceParent(parent);
+  clearMe.innerHTML = '';
+}
+
 //END HTML WRITE CODE

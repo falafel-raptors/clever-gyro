@@ -1,38 +1,44 @@
 'use strict';
-/*global randomInclusiveNumGen */
-var currentVal = 0;
-var min = 1;
-var max = 10;
-var targetVal = 20;
+/*global randomInclusiveNumGen gameState */
+var currentVal = gameState.currentValue;
+var targetVal = gameState.targetValue;
+
 
 document.addEventListener('DOMContentLoaded', function(e) { 
   e.preventDefault();
+  var cards = document.getElementById('cards');
+  
+  var handleClick = function(card) {
+    var upCount = gameState.cardUp.int * gameState.cardUp.operator;
+    var leftCount = gameState.cardLeft.int * gameState.cardLeft.operator;
+    var rightCount = gameState.cardRight.int * gameState.cardRight.operator;
+    var downCount = gameState.cardDown.int * gameState.cardDown.operator;
 
-  var up = document.getElementById('upButton').innerHTML;
-  var left = document.getElementById('leftButton').innerHTML;
-  var right = document.getElementById('rightButton').innerHTML;
-  var down = document.getElementById('downButton').innerHTML;
-
-
-
-
-  var handleClick = function(button) {
-    if(button.target.id === 'upButton' || button.target.id === 'leftButton' || button.target.id === 'rightButton' || button.target.id === 'downButton'){
-      currentVal += parseInt(button.target.innerHTML);
-      console.log(currentVal);
-      var randNum = randomInclusiveNumGen(min, max);
-      button.target.innerHTML = randNum;
+    if(card.target.parentElement.id === 'upButton'){
+      gameState.currentValue += upCount;
+      console.log(card.target.parentElement.id);
     }
+    if(card.target.parentElement.id === 'leftButton'){
+      console.log(card.target.parentElement.id);
+      gameState.currentValue += leftCount;
+    }
+    if(card.target.parentElement.id === 'rightButton'){
+      console.log(card.target.parentElement.id);
+      gameState.currentValue += rightCount;
+    }
+    if(card.target.parentElement.id === 'downButton'){
+      console.log(card.target.parentElement.id);
+      gameState.currentValue += downCount;
+    }
+    generateDeck();
+    console.log('current value', gameState.currentValue);
+
+    //save to local storage
+    storeInLocal ('gameState', gameState);
+
   };
 
-
-
-  document.addEventListener('click', handleClick);
-
-
-
-
-
+  cards.addEventListener('click', handleClick);
 
 });
 

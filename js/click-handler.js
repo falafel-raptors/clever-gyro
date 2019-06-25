@@ -1,9 +1,6 @@
 'use strict';
 /*global gameState generateDeck storeInLocal countUpdater */
 
-var cards = document.getElementById('cards');
-
-
 function handleClick (e) {
   e.preventDefault();
   //check the element based on that p, and increases current value

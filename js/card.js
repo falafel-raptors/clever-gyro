@@ -4,6 +4,8 @@
 //iterate over our cards, including current value
 var cardArray = ['upButton', 'downButton', 'leftButton', 'rightButton'];
 
+var cards = document.getElementById('cards');
+
 //To change individual card values
 function buildNewCard(cardButton) {
   clearHTML(cardButton); // ex: 'upButton'
@@ -80,10 +82,8 @@ function generateDeck(){
   // console.log(gameState);
 
   buildCards();
-  var cards = document.getElementById('cards');
   cards.addEventListener('click', handleClick);
   document.addEventListener('keydown', handleKeyDown, false);
-
 
   //save to local storage
   storeInLocal('gameState', gameState);

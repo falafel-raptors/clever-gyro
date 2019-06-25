@@ -80,6 +80,10 @@ function generateDeck(){
   // console.log(gameState);
 
   buildCards();
+  var cards = document.getElementById('cards');
+  cards.addEventListener('click', handleClick);
+  document.addEventListener('keydown', handleKeyDown, false);
+
 
   //save to local storage
   storeInLocal('gameState', gameState);

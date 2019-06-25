@@ -13,6 +13,7 @@ function handleKeyDown(e) {
   }
   if(gameState.currentValue === gameState.targetValue){
     document.removeEventListener('keydown', handleKeyDown, false);
+    // TODO: Produce modal
   } else {
     //check the keydown event, and increases current value
     if(keyCodeArray.includes(keyCodes)){
@@ -32,7 +33,6 @@ function handleKeyDown(e) {
         gameState.currentValue += countUpdater(gameState.cardDown);
         buildNewCard('downButton');
       }
-      console.log('current value:', gameState.currentValue);
     }
   }  
   //save to local storage

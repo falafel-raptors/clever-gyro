@@ -14,6 +14,8 @@ var gameState = {
   cardDown: 0,
   minRange: 1,
   maxRange: 10,
+  targetMin: 100,
+  targetMax: 200
 };
 
 //requirements:

@@ -7,6 +7,7 @@
     <title>Clever Gyro</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="assets/favicon.ico">
   </head>
   <body>
     <header>
@@ -19,17 +20,22 @@
       <aside id="modal">
         <p></p>
       </aside>
-      <section id="cards">
-        <div class="card" id="upButton">Up</div>
-        <div class="card" id="leftButton">Left</div>
-        <div class="card" id="rightButton">Right</div>
-        <div class="card" id="downButton">Down</div>
+      <section id="cards" class="game-board">
+        <div class="box" class="empty" ></div>
+        <div class="card" class="box" id="upButton">Up</div>
+        <div class="box" class="empty"></div>
+        <div class="card" class="box" id="leftButton">Left</div>
+        <div id="currentValue" class="box">Current Value</div>
+        <div class="card" class="box" id="rightButton">Right</div>
+        <div class="box" class="empty"></div>
+        <div class="card" class="box" id="downButton">Down</div>
+        <div class="box" class="empty"></div>
       </section>
-      <div id="currentValue">Current Value</div>
+      
     </main>
 
     <footer>
-      <a href="about.html">About</a>
+      <p><a href="about.html"><img src="assets/logo.png" height="50px" width="200px"></a></p>
     </footer>
     <script src="js/buildHTML.js"></script>
     <script src="js/random-num-gen.js"></script>

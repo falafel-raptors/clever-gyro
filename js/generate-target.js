@@ -5,7 +5,7 @@
 function generateTarget() {
 
   // var target = randomInclusiveNumGen(gameState.minRange, gameState.MaxRange);
-  var target = randomInclusiveNumGen(gameState.minRange, gameState.maxRange);
+  var target = randomInclusiveNumGen(gameState.targetMin, gameState.targetMax);
   buildTarget(target);
 }
 

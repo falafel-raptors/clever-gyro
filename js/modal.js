@@ -1,4 +1,5 @@
 'use strict';
+/*global gameState clearHTML htmlTextHack storeInLocal */
 
 var rulesButton = document.getElementById('rules');
 rulesButton.addEventListener('click',toggleRule);

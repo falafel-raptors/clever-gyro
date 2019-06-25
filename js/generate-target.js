@@ -1,4 +1,5 @@
 'use strict';
+/*global gameState randomInclusiveNumGen storeInLocal clearHTML htmlTextHack */
 
 //generate our target number, out of our range
 function generateTarget() {

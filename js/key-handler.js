@@ -1,4 +1,5 @@
 'use strict';
+/*global gameState generateDeck storeInLocal */
 
 document.addEventListener('keydown', keyDownTextField, false);
 

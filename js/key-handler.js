@@ -3,13 +3,17 @@
 
 document.addEventListener('keydown', handleKeyDown, false);
 
+//contains and checks for key press: WASD and arrows UDLR.
 function handleKeyDown(e) {
-  var upCount = gameState.cardUp.int * gameState.cardUp.operator;
-  var leftCount = gameState.cardLeft.int * gameState.cardLeft.operator;
-  var rightCount = gameState.cardRight.int * gameState.cardRight.operator;
-  var downCount = gameState.cardDown.int * gameState.cardDown.operator;
+  //math logic: checks operator for negative, and multiples if so.
+  var upCount = gameState.cardUp.operator === '-' ? gameState.cardUp.int * -1 : gameState.cardUp.int;
+  var leftCount = gameState.cardLeft.operator === '-' ? gameState.cardLeft.int * -1 : gameState.cardLeft.int;
+  var rightCount = gameState.cardRight.operator === '-' ? gameState.cardRight.int * -1 : gameState.cardRight.int;
+  var downCount = gameState.cardDown.operator === '-' ? gameState.cardDown.int * -1 : gameState.cardDown.int;
   var keyCode = e.keyCode;
   var keyCodeArray = [87, 38, 65, 37, 68, 39, 83, 40];
+
+  //check the keydown event, and increases current value
   if(keyCodeArray.includes(keyCode)){
     if(keyCode === 87 || keyCode === 38){
       gameState.currentValue += upCount;
@@ -23,9 +27,9 @@ function handleKeyDown(e) {
     if(keyCode === 83 || keyCode === 40){
       gameState.currentValue += downCount;
     }
+    //TODO: generate only one card, unless first iteration
     generateDeck();
   }
-  console.log('current value', gameState.currentValue);
 
   //save to local storage
   storeInLocal ('gameState', gameState);

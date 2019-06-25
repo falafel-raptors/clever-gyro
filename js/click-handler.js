@@ -17,15 +17,15 @@
         gameState.currentValue += countUpdater(gameState.cardUp);
         buildNewCard('upButton');
       }
-      if(e.target.parentElement.id === 'leftButton'){
+      else if(e.target.parentElement.id === 'leftButton'){
         gameState.currentValue += countUpdater(gameState.cardLeft);
         buildNewCard('leftButton');
       }
-      if(e.target.parentElement.id === 'rightButton'){
+      else if(e.target.parentElement.id === 'rightButton'){
         gameState.currentValue += countUpdater(gameState.cardRight);
         buildNewCard('rightButton');
       }
-      if(e.target.parentElement.id === 'downButton'){
+      else if(e.target.parentElement.id === 'downButton'){
         gameState.currentValue += countUpdater(gameState.cardDown);
         buildNewCard('downButton');
       }

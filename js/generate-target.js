@@ -1,10 +1,11 @@
 'use strict';
+/*global gameState randomInclusiveNumGen storeInLocal clearHTML htmlTextHack */
 
 //generate our target number, out of our range
 function generateTarget() {
 
   // var target = randomInclusiveNumGen(gameState.minRange, gameState.MaxRange);
-  var target = randomInclusiveNumGen(1, 10);
+  var target = randomInclusiveNumGen(gameState.minRange, gameState.maxRange);
   buildTarget(target);
 }
 

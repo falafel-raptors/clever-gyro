@@ -1,4 +1,5 @@
 'use strict';
+/*global returnFromLocal buildTarget buildCard generateTarget writeRules generateDeck */
 
 // globals
 var gameState = {
@@ -10,7 +11,9 @@ var gameState = {
   cardUp: 0,
   cardLeft: 0,
   cardRight: 0,
-  cardDown: 0
+  cardDown: 0,
+  minRange: 1,
+  maxRange: 10,
 };
 
 //requirements:

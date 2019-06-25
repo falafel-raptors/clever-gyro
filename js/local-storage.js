@@ -7,7 +7,6 @@ function storeInLocal (key, value) {
   //stringify an object
   var objectStringified = JSON.stringify(value);
   localStorage.setItem(key, objectStringified);
-
 }
 
 //return from local storage, parse.

@@ -10,8 +10,8 @@ function resetGame(){
     document.getElementById('upButton').innerHTML = '';
     localStorage.clear();
     gameState.currentValue = 0;
-    storeInLocal('gameState', gameState);
     generateTarget();
     generateDeck();
+    storeInLocal('gameState', gameState);
   }
 };

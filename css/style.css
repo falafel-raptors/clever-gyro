@@ -1,20 +1,162 @@
+/* general stuff */
 body {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-  background-color: black;
-  color: blanchedalmond;
+  background-color: #99858E;
+  color: black;
+  /* width: 100%;
+  height: 100%; */
+  /* flexbox */
+  display: flex;
+  justify-content: center;
 }
-#header{
+header{
+  background-color: #7B4A5C;
+  width: 100%;
+  height: 15%;
+  color: white;
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0 auto;
+  display: inline;
+  padding-left: 4%;
+  padding-right: 4%;
+}
+header > input {
+  background-color: #be66c4;
+  display: inline-block;
+  width: 20%;
+  font-size: 1.9em;
+  border: 0;
+  border-radius: 5px;
+  
+}
+#target-value {
+  /* width: 5%; */
+  text-align: center;
+  display: inline-block;
+  margin-top: 35px;
+  font-size: 2.2em;
+  border-radius: 200px;
+  background-color: #1f1433;
+  margin-left: 16.5%;
+  margin-right: 16.5%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  padding-top: .75%;
+}
+/* header for about page */
+.aboutheader{
+width: 100%;
+text-align: center;
+display: inline-block;
+margin-top: 35px;
+font-size: 2.2em;
+border-radius: 200px;
+background-color: #1f1433;
+}
 
+/* end of header */
+
+main {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  margin-top: 200px;
 }
 
 #modal{
+  background-color: blanchedalmond;
+  margin: 5%;
+  font-size: 2em;
+  border-radius: 15px;
+  opacity: .9;
 
 }
-
+/* allcards */
 #cards{
+  min-height: 400px;
+  justify-content: center;
+
+  max-width: 600px;
+  max-height: 500px;
+  margin: auto;
 
 }
+/* single card */
+.card{
+  background-color:#A4ACA2;
+  color: black;
+  border-radius: 10px;
+  background-color: #87A86D;
+  padding: 15%;
+}
+/* flexbox stuff */
+.game-board { 
+  display: grid;
+  grid-template-rows: 30% 30% 30%;
+  grid-template-columns: 30% 30% 30%;
+}
 
-#footer{
+.box {
+  background: #99858E;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #AAA;
+}
+/* end flexbox */
 
+.card > p {
+  /* background-color: black; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2em;
+  
+}
+
+.empty {
+  
+}
+
+#currentValue {
+  background-color: #301C20;
+  color: white;
+  border-radius: 200px;
+  font-size: 2.2em;
+  
+}
+
+footer{
+  background-color: #1f1433;
+  width: 100%;
+  height: 15%;
+  color: white;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+}
+
+footer > p > a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.6em;
+}
+a:hover{
+  color: black;
+}
+footer > p {
+  /* background-color: black; */
+  padding-top: 50px;
+  line-height: auto;
+  /* padding: 20px; */
+}
+
+
+/* about page stuff */
+#teampic{
+  border-radius: 15px;
+  border: 1px solid black;
 }

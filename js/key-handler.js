@@ -9,19 +9,22 @@ function handleKeyDown(e) {
   var rightCount = gameState.cardRight.int * gameState.cardRight.operator;
   var downCount = gameState.cardDown.int * gameState.cardDown.operator;
   var keyCode = e.keyCode;
-  if(keyCode === 87 || keyCode === 38){
-    gameState.currentValue += upCount;
+  var keyCodeArray = [87, 38, 65, 37, 68, 39, 83, 40];
+  if(keyCodeArray.includes(keyCode)){
+    if(keyCode === 87 || keyCode === 38){
+      gameState.currentValue += upCount;
+    }
+    if(keyCode === 65 || keyCode === 37){
+      gameState.currentValue += leftCount;
+    }
+    if(keyCode === 68 || keyCode === 39){
+      gameState.currentValue += rightCount;
+    }
+    if(keyCode === 83 || keyCode === 40){
+      gameState.currentValue += downCount;
+    }
+    generateDeck();
   }
-  if(keyCode === 65 || keyCode === 37){
-    gameState.currentValue += leftCount;
-  }
-  if(keyCode === 68 || keyCode === 39){
-    gameState.currentValue += rightCount;
-  }
-  if(keyCode === 83 || keyCode === 40){
-    gameState.currentValue += downCount;
-  }
-  generateDeck();
   console.log('current value', gameState.currentValue);
 
   //save to local storage

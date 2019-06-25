@@ -13,19 +13,19 @@
       cards.removeEventListener('click', handleClick);
       // TODO: produce modal
     } else {
-      if(e.target.parentElement.id === 'upButton'){
+      if(e.target.id === 'upButton'|| e.target.parentElement.id === 'upButton'){
         gameState.currentValue += countUpdater(gameState.cardUp);
         buildNewCard('upButton');
       }
-      else if(e.target.parentElement.id === 'leftButton'){
+      else if(e.target.id === 'leftButton'|| e.target.parentElement.id === 'leftButton'){
         gameState.currentValue += countUpdater(gameState.cardLeft);
         buildNewCard('leftButton');
       }
-      else if(e.target.parentElement.id === 'rightButton'){
+      else if(e.target.id === 'rightButton'|| e.target.parentElement.id === 'rightButton'){
         gameState.currentValue += countUpdater(gameState.cardRight);
         buildNewCard('rightButton');
       }
-      else if(e.target.parentElement.id === 'downButton'){
+      else if(e.target.id === 'downButton'|| e.target.parentElement.id === 'downButton'){
         gameState.currentValue += countUpdater(gameState.cardDown);
         buildNewCard('downButton');
       }

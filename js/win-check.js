@@ -6,3 +6,7 @@ function countUpdater(gameStateItem){
   console.log('count update', countUpdate);
   return countUpdate;
 }
+
+function checkForWin(){  
+  // produce modal
+} 

@@ -1,5 +1,5 @@
 'use strict';
-/*global gameState */
+/*global gameState clearHTML htmlTextHack generateDeck randomInclusiveNumGen storeInLocal */
 
 //call ran num by range
 //assign operator +/-

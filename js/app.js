@@ -1,4 +1,5 @@
 'use strict';
+/*global returnFromLocal buildTarget buildCard generateTarget writeRules generateDeck */
 
 // globals
 var gameState = {

@@ -1,4 +1,5 @@
 'use strict';
+/*global gameState clearHTML htmlTextHack storeInLocal */
 
 var rulesButton = document.getElementById('rules');
 rulesButton.addEventListener('click',toggleRule);
@@ -31,5 +32,5 @@ function writeRules (id) {
 
   //save state
   storeInLocal ('gameState', gameState);
-  
+
 }

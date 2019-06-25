@@ -5,16 +5,28 @@
 var cardArray = ['upButton', 'downButton', 'leftButton', 'rightButton'];
 
 //To change individual card values
-function buildNewCard(cardButton, gameStateItem) {
-  clearHTML(cardButton);
+function buildNewCard(cardButton) {
+  clearHTML(cardButton); // ex: 'upButton'
   var ranNum = randomInclusiveNumGen(gameState.minRange, gameState.maxRange);
-  gameStateItem = {int: ranNum, str: String(ranNum), operator: gameStateItem.operator};
-  console.log('gameStateItem.operator', gameStateItem.operator);
-  console.log('gameStateItem', gameStateItem);
-  htmlTextHack('p', gameStateItem.operator+gameStateItem.str, cardButton);
-  storeInLocal('gameState', gameState);
+  if(cardButton === 'upButton'){
+    gameState.cardUp = {int: ranNum, str: String(ranNum), operator: gameState.cardUp.operator};
+    htmlTextHack('p', gameState.cardUp.operator+gameState.cardUp.str, cardButton);
+  }
+  if(cardButton === 'downButton'){
+    gameState.cardDown = {int: ranNum, str: String(ranNum), operator: gameState.cardDown.operator};
+    htmlTextHack('p', gameState.cardDown.operator+gameState.cardDown.str, cardButton);
+  }
+  if(cardButton === 'leftButton'){
+    gameState.cardLeft = {int: ranNum, str: String(ranNum), operator: gameState.cardLeft.operator};
+    htmlTextHack('p', gameState.cardLeft.operator+gameState.cardLeft.str, cardButton);
+  }
+  if(cardButton === 'rightButton'){
+    gameState.cardRight = {int: ranNum, str: String(ranNum), operator: gameState.cardRight.operator};
+    htmlTextHack('p', gameState.cardRight.operator+gameState.cardRight.str, cardButton);
+  }
   clearHTML('currentValue');
   htmlTextHack('p', String(gameState.currentValue), 'currentValue');
+  storeInLocal('gameState', gameState);
 }
 
 //displays HTML to screen, and also clears

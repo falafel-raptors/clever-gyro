@@ -1,5 +1,6 @@
 'use strict';
-/*global gameState generateDeck storeInLocal */
+
+/*global gameState generateDeck storeInLocal countUpdater */
 
 document.addEventListener('DOMContentLoaded', function(e) { 
   e.preventDefault();
@@ -11,34 +12,31 @@ document.addEventListener('DOMContentLoaded', function(e) {
   }
 
   var handleClick = function(card) {
-    //math logic: checks operator for negative, and multiples if so.
-    var upCount = gameState.cardUp.operator === '-' ? gameState.cardUp.int * -1 : gameState.cardUp.int;
-    var downCount = gameState.cardDown.operator === '-' ? gameState.cardDown.int * -1 : gameState.cardDown.int;
-    var leftCount = gameState.cardLeft.operator === '-' ? gameState.cardLeft.int * -1 : gameState.cardLeft.int;
-    var rightCount = gameState.cardRight.operator === '-' ? gameState.cardRight.int * -1 : gameState.cardRight.int;
-
     //check the element based on that p, and increases current value
     if(card.target.parentElement.id === 'upButton'){
-      gameState.currentValue += upCount;
+      console.log(card.target.parentElement)
+      console.log(typeof (card.target.parentElement.id));
+      gameState.currentValue += countUpdater(gameState.cardUp);
+      buildNewCard('upButton');
     }
     if(card.target.parentElement.id === 'leftButton'){
-      gameState.currentValue += leftCount;
+      console.log(typeof (card.target.parentElement.id));
+      gameState.currentValue += countUpdater(gameState.cardLeft);
+      buildNewCard('leftButton');
     }
     if(card.target.parentElement.id === 'rightButton'){
-      gameState.currentValue += rightCount;
+      gameState.currentValue += countUpdater(gameState.cardRight);
+      buildNewCard('rightButton');
     }
     if(card.target.parentElement.id === 'downButton'){
-      gameState.currentValue += downCount;
+      gameState.currentValue += countUpdater(gameState.cardDown);
+      buildNewCard('downButton');
     }
-    //generate all four cards
-    //TODO: update for single card.
-    generateDeck();
     console.log('current value:', gameState.currentValue);
 
     //save to local storage
     storeInLocal ('gameState', gameState);
   };
-
   cards.addEventListener('click', handleClick);
 
 });

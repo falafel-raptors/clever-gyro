@@ -1,9 +1,9 @@
 'use strict';
 /*global gameState generateDeck storeInLocal */
 
-document.addEventListener('keydown', keyDownTextField, false);
+document.addEventListener('keydown', handleKeyDown, false);
 
-function keyDownTextField(e) {
+function handleKeyDown(e) {
   var upCount = gameState.cardUp.int * gameState.cardUp.operator;
   var leftCount = gameState.cardLeft.int * gameState.cardLeft.operator;
   var rightCount = gameState.cardRight.int * gameState.cardRight.operator;

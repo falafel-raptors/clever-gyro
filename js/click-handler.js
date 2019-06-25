@@ -1,13 +1,15 @@
 'use strict';
-/*global randomInclusiveNumGen gameState */
-var currentVal = gameState.currentValue;
-var targetVal = gameState.targetValue;
-
+/*global gameState generateDeck storeInLocal */
 
 document.addEventListener('DOMContentLoaded', function(e) { 
   e.preventDefault();
   var cards = document.getElementById('cards');
-  
+
+  var pressedButton = e.key;
+  if(pressedButton === 'w'){
+    console.log('pressedButton:', pressedButton);
+  }
+
   var handleClick = function(card) {
     var upCount = gameState.cardUp.int * gameState.cardUp.operator;
     var leftCount = gameState.cardLeft.int * gameState.cardLeft.operator;
@@ -35,8 +37,26 @@ document.addEventListener('DOMContentLoaded', function(e) {
 
     //save to local storage
     storeInLocal ('gameState', gameState);
-
   };
+
+  // var handleKeyDown = function(card){
+
+  //   var upCount = gameState.cardUp.int * gameState.cardUp.operator;
+  //   var leftCount = gameState.cardLeft.int * gameState.cardLeft.operator;
+  //   var rightCount = gameState.cardRight.int * gameState.cardRight.operator;
+  //   var downCount = gameState.cardDown.int * gameState.cardDown.operator;
+  //   if(e.keyCode === 87 || e.key === 'ArrowUp'){
+  //     gameState.currentValue += upCount;
+  //     console.log(card.target.parentElement.id);
+  //     console.log(e.code);
+  //   }
+
+  //   generateDeck();
+  //   console.log('current value', gameState.currentValue);
+
+  //   //save to local storage
+  //   storeInLocal ('gameState', gameState);
+  // };
 
   cards.addEventListener('click', handleClick);
 

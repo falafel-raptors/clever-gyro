@@ -31,5 +31,5 @@ function writeRules (id) {
 
   //save state
   storeInLocal ('gameState', gameState);
-  
+
 }

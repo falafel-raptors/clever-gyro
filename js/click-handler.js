@@ -1,10 +1,7 @@
 'use strict';
 /*global gameState generateDeck storeInLocal countUpdater */
 
-// document.addEventListener('DOMContentLoaded', function(e) { 
-//   e.preventDefault();
-  var cards = document.getElementById('cards');
-
+var cards = document.getElementById('cards');
 
   function handleClick (e) {
     e.preventDefault();
@@ -31,8 +28,7 @@
       }
     //save to local storage
     storeInLocal ('gameState', gameState);
-    }
   }
+}
 
-  cards.addEventListener('click', handleClick);
-// })
+cards.addEventListener('click', handleClick);

@@ -1,5 +1,5 @@
 'use strict';
-/*global returnFromLocal buildTarget buildCard generateTarget writeRules generateDeck */
+/*global returnFromLocal buildTarget buildCards generateTarget writeRules generateDeck */
 
 // globals
 var gameState = {
@@ -37,7 +37,7 @@ function init(){
   if(localStorage.gameState){
     gameState = returnFromLocal('gameState');
     buildTarget(gameState.targetValue);
-    buildCard();
+    buildCards();
   }else{
     generateTarget();
     writeRules('modal');

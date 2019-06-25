@@ -20,24 +20,20 @@ document.addEventListener('DOMContentLoaded', function(e) {
     //check the element based on that p, and increases current value
     if(card.target.parentElement.id === 'upButton'){
       gameState.currentValue += upCount;
-      console.log(card.target.parentElement.id);
     }
     if(card.target.parentElement.id === 'leftButton'){
-      console.log(card.target.parentElement.id);
       gameState.currentValue += leftCount;
     }
     if(card.target.parentElement.id === 'rightButton'){
-      console.log(card.target.parentElement.id);
       gameState.currentValue += rightCount;
     }
     if(card.target.parentElement.id === 'downButton'){
-      console.log(card.target.parentElement.id);
       gameState.currentValue += downCount;
     }
     //generate all four cards
     //TODO: update for single card.
     generateDeck();
-    console.log('current value', gameState.currentValue);
+    console.log('current value:', gameState.currentValue);
 
     //save to local storage
     storeInLocal ('gameState', gameState);

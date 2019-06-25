@@ -1,34 +1,46 @@
 'use strict';
-/*global gameState generateDeck storeInLocal */
+/*global gameState generateDeck storeInLocal buildNewCard */
+
+function countUpdater(gameStateItem){
+  var countUpdate = gameStateItem.operator === '-' ? gameStateItem.int * -1 : gameStateItem.int;
+  console.log('count update', countUpdate);
+  return countUpdate;
+}
 
 document.addEventListener('keydown', handleKeyDown, false);
 
 //contains and checks for key press: WASD and arrows UDLR.
-function handleKeyDown(e) {
+//TODO: add count parameter function for updating currentValue and card int
+function handleKeyDown(e, count) {
   //math logic: checks operator for negative, and multiples if so.
-  var upCount = gameState.cardUp.operator === '-' ? gameState.cardUp.int * -1 : gameState.cardUp.int;
-  var leftCount = gameState.cardLeft.operator === '-' ? gameState.cardLeft.int * -1 : gameState.cardLeft.int;
-  var rightCount = gameState.cardRight.operator === '-' ? gameState.cardRight.int * -1 : gameState.cardRight.int;
-  var downCount = gameState.cardDown.operator === '-' ? gameState.cardDown.int * -1 : gameState.cardDown.int;
   var keyCode = e.keyCode;
   var keyCodeArray = [87, 38, 65, 37, 68, 39, 83, 40];
+  
 
+
+  
   //check the keydown event, and increases current value
   if(keyCodeArray.includes(keyCode)){
     if(keyCode === 87 || keyCode === 38){
-      gameState.currentValue += upCount;
+      // console.log(upCount);
+      gameState.currentValue += countUpdater(gameState.cardUp);
+      buildNewCard('upButton', gameState.cardUp);
     }
     if(keyCode === 65 || keyCode === 37){
-      gameState.currentValue += leftCount;
+      gameState.currentValue += countUpdater(gameState.cardleft);
+      buildNewCard('leftButton', gameState.cardLeft);
     }
     if(keyCode === 68 || keyCode === 39){
-      gameState.currentValue += rightCount;
+      gameState.currentValue += countUpdater(gameState.cardright);
+      buildNewCard('rightButton', gameState.cardRight);
     }
     if(keyCode === 83 || keyCode === 40){
-      gameState.currentValue += downCount;
+      gameState.currentValue += countUpdater(gameState.carddown);
+      buildNewCard('downButton', gameState.cardDown);
     }
     //TODO: generate only one card, unless first iteration
-    generateDeck();
+    // generateDeck();
+    console.log('current value:', gameState.currentValue);
   }
 
   //save to local storage

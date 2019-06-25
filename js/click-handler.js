@@ -11,11 +11,13 @@ document.addEventListener('DOMContentLoaded', function(e) {
   }
 
   var handleClick = function(card) {
-    var upCount = gameState.cardUp.int * gameState.cardUp.operator;
-    var leftCount = gameState.cardLeft.int * gameState.cardLeft.operator;
-    var rightCount = gameState.cardRight.int * gameState.cardRight.operator;
-    var downCount = gameState.cardDown.int * gameState.cardDown.operator;
+    //math logic: checks operator for negative, and multiples if so.
+    var upCount = gameState.cardUp.operator === '-' ? gameState.cardUp.int * -1 : gameState.cardUp.int;
+    var downCount = gameState.cardDown.operator === '-' ? gameState.cardDown.int * -1 : gameState.cardDown.int;
+    var leftCount = gameState.cardLeft.operator === '-' ? gameState.cardLeft.int * -1 : gameState.cardLeft.int;
+    var rightCount = gameState.cardRight.operator === '-' ? gameState.cardRight.int * -1 : gameState.cardRight.int;
 
+    //check the element based on that p, and increases current value
     if(card.target.parentElement.id === 'upButton'){
       gameState.currentValue += upCount;
       console.log(card.target.parentElement.id);
@@ -32,6 +34,8 @@ document.addEventListener('DOMContentLoaded', function(e) {
       console.log(card.target.parentElement.id);
       gameState.currentValue += downCount;
     }
+    //generate all four cards
+    //TODO: update for single card.
     generateDeck();
     console.log('current value', gameState.currentValue);
 

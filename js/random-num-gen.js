@@ -1,4 +1,5 @@
 'use strict';
+/* eslint-disable no-unused-vars */
 
 function randomInclusiveNumGen(min, max){
   min = Math.ceil(min);

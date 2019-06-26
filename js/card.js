@@ -1,5 +1,5 @@
 'use strict';
-/*global gameState clearHTML htmlTextHack randomInclusiveNumGen storeInLocal generateOperator */
+/*global gameState clearHTML htmlTextHack randomInclusiveNumGen storeInLocal generateOperator handleClick handleKeyDown */
 /* eslint-disable no-unused-vars */
 
 //iterate over our cards, including current value
@@ -12,7 +12,7 @@ function buildNewCard(cardButton) {
   var ranNum = randomInclusiveNumGen(gameState.minRange, gameState.maxRange);
   //working here -- wedjk.  generate a random operator
   var operatorChosen = generateOperator();
-  
+
   if(cardButton === 'upButton'){
     gameState.cardUp = {int: ranNum, str: String(ranNum), operator: operatorChosen };
     htmlTextHack('p', gameState.cardUp.operator+gameState.cardUp.str, cardButton);
@@ -42,7 +42,6 @@ function buildCards(){
   //clear and build cards
   for(let i = 0; i<cardArray.length; i++){
     clearHTML(cardArray[i]);
-
     htmlTextHack('p',deckObjects[i].operator+deckObjects[i].str, cardArray[i]);
   }
   //clear and build current value div
@@ -91,9 +90,6 @@ function generateDeck(){
   cards.addEventListener('click', handleClick);
   document.addEventListener('keydown', handleKeyDown, false);
 
-
   //save to local storage
   storeInLocal('gameState', gameState);
 }
-
-

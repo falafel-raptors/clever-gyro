@@ -8,22 +8,25 @@ function handleClick (e) {
   //check the element based on that p, and increases current value
   if(gameState.currentValue === gameState.targetValue){
     cards.removeEventListener('click', handleClick);
-    // TODO: produce modal
   } else {
     if(e.target.id === 'upButton'|| e.target.parentElement.id === 'upButton'){
-      gameState.currentValue += countUpdater(gameState.cardUp);
+      //call function here to do the math
+      gameState.currentValue = doMath(gameState.cardUp);
       buildNewCard('upButton');
     }
     else if(e.target.id === 'leftButton'|| e.target.parentElement.id === 'leftButton'){
-      gameState.currentValue += countUpdater(gameState.cardLeft);
+      //call function to do the math
+      gameState.currentValue = doMath(gameState.cardLeft);
       buildNewCard('leftButton');
     }
     else if(e.target.id === 'rightButton'|| e.target.parentElement.id === 'rightButton'){
-      gameState.currentValue += countUpdater(gameState.cardRight);
+      //call function to do the math
+      gameState.currentValue = doMath(gameState.cardRight);
       buildNewCard('rightButton');
     }
     else if(e.target.id === 'downButton'|| e.target.parentElement.id === 'downButton'){
-      gameState.currentValue += countUpdater(gameState.cardDown);
+      //call function to do the math
+      gameState.currentValue = doMath(gameState.cardDown);
       buildNewCard('downButton');
     }
     //save to local storage

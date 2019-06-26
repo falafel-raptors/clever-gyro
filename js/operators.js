@@ -40,6 +40,5 @@ function doMath(gameStateItem){
   if (cardOp === '%'){
     calculated = current % cardInt;
   }
-
   return calculated;
 }

@@ -16,7 +16,7 @@ var gameState = {
   maxRange: 10,
   targetMin: 100,
   targetMax: 200,
-  timer: 99.3
+  timer: 0
 };
 
 var leaderBoard = [3.2, 10.4, 9.5, 1.1];
@@ -34,6 +34,11 @@ var leaderBoard = [3.2, 10.4, 9.5, 1.1];
 //function to handle keys
 //CSS
 
+//Trevor added for timer
+var interval;
+function timer (){
+  interval = setInterval(myTimer,100);
+}
 
 
 function init(){
@@ -48,6 +53,12 @@ function init(){
   }
   generateScoreboard();
   console.log('gamestate', gameState);
+  //trevor added for timer
+  timer();
 }
 
 init();
+
+function saveState(){
+  storeInLocal('gameState', gameState);
+}

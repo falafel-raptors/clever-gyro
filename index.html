@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="assets/raptor.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   </head>
-  <body>
+  <body onunload="saveState()">
     <header>
       <ul id="header">
         <li><input id="reset" type="button" value="reset"></li>
@@ -76,6 +76,7 @@
     <script src="js/modal.js"></script>
     <script src="js/reset.js"></script>
     <script src="js/buildHTML.js"></script>
+    <script src="js/timer.js"></script>
     <script src="js/random-num-gen.js"></script>
     <script src="js/local-storage.js"></script>
     <script src="js/card.js"></script>

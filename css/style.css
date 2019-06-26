@@ -1,39 +1,54 @@
-/* general stuff */
+/* Base styles */
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   background-color: #99858E;
-  color: black;
-  /* width: 100%;
-  height: 100%; */
-  /* flexbox */
-  display: flex;
-  justify-content: center;
 }
-header{
-  background-color: #7B4A5C;
+
+header {
   width: 100%;
-  height: 15%;
+  background-color: #7B4A5C;
+  margin-top: 0;
+  height: 100px;
   color: white;
+}
+
+header > ul {
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+
+ul > li {
+  margin: 0 auto;
+  float: left;
+}
+
+/* header{
   position: absolute;
   left: 0;
   top: 0;
   margin: 0 auto;
-  display: inline;
   padding-left: 4%;
   padding-right: 4%;
-}
-header > input {
+} */
+
+/* header > input {
   background-color: #be66c4;
   display: inline-block;
   width: 20%;
   font-size: 1.9em;
   border: 0;
   border-radius: 5px;
-  
-}
-#target-value {
+   */
+/* } */
+/* #target-value { */
   /* width: 5%; */
-  text-align: center;
+  /* text-align: center;
   display: inline-block;
   margin-top: 35px;
   font-size: 2.2em;
@@ -44,7 +59,7 @@ header > input {
   padding-left: 2.5%;
   padding-right: 2.5%;
   padding-top: .75%;
-}
+} */
 /* header for about page */
 .aboutheader{
 width: 100%;
@@ -62,7 +77,7 @@ main {
   text-align: center;
   width: 100%;
   height: 100%;
-  margin-top: 200px;
+  /* margin-top: 200px; */
 }
 
 #modal{
@@ -131,12 +146,18 @@ main {
 footer{
   background-color: #1f1433;
   width: 100%;
-  height: 15%;
+  height: 100px;
   color: white;
   position: absolute;
   left: 0;
   bottom: 0;
   text-align: center;
+}
+
+footer > ul {
+  height: 100px;
+  display: flex;
+  align-items: center;
 }
 
 footer > p > a {

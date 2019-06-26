@@ -1,15 +1,12 @@
 'use strict';
-/*global gameState generateDeck storeInLocal countUpdater */
+/*global gameState buildNewCard storeInLocal countUpdater handleKeyDown generateScoreboard */
 
 var cards = document.getElementById('cards');
 
 function handleClick (e) {
   e.preventDefault();
   //check the element based on that p, and increases current value
-  if(gameState.currentValue === gameState.targetValue){
-    cards.removeEventListener('click', handleClick);
-  } else {
-    if(e.target.id === 'upButton'|| e.target.parentElement.id === 'upButton'){
+  if(e.target.id === 'upButton'|| e.target.parentElement.id === 'upButton'){
       //call function here to do the math
       gameState.currentValue = doMath(gameState.cardUp);
       buildNewCard('upButton');
@@ -29,9 +26,13 @@ function handleClick (e) {
       gameState.currentValue = doMath(gameState.cardDown);
       buildNewCard('downButton');
     }
-    //save to local storage
-    storeInLocal ('gameState', gameState);
+  //save to local storage
+  if(gameState.currentValue === gameState.targetValue){
+    cards.removeEventListener('click', handleClick);
+    document.removeEventListener('keydown', handleKeyDown, false);
+    generateScoreboard();
   }
+  storeInLocal ('gameState', gameState);
 }
 
 cards.addEventListener('click', handleClick);

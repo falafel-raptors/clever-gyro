@@ -1,5 +1,5 @@
 'use strict';
-/*global gameState generateDeck storeInLocal buildNewCard countUpdater */
+/*global gameState generateScoreboard cards handleClick storeInLocal buildNewCard countUpdater */
 
 document.addEventListener('keydown', handleKeyDown, false);
 
@@ -11,30 +11,30 @@ function handleKeyDown(e) {
   if(keyCodeArray.indexOf(keyCodes) >-1){
     e.preventDefault();
   }
+  //check the keydown event, and increases current value
+  if(keyCodeArray.includes(keyCodes)){
+    if(keyCodes === 87 || keyCodes === 38){
+      gameState.currentValue += countUpdater(gameState.cardUp);
+      buildNewCard('upButton');
+    }
+    if(keyCodes === 65 || keyCodes === 37){
+      gameState.currentValue += countUpdater(gameState.cardLeft);
+      buildNewCard('leftButton');
+    }
+    if(keyCodes === 68 || keyCodes === 39){
+      gameState.currentValue += countUpdater(gameState.cardRight);
+      buildNewCard('rightButton');
+    }
+    if(keyCodes === 83 || keyCodes === 40){
+      gameState.currentValue += countUpdater(gameState.cardDown);
+      buildNewCard('downButton');
+    }
+  }
   if(gameState.currentValue === gameState.targetValue){
     document.removeEventListener('keydown', handleKeyDown, false);
-    // TODO: Produce modal
-  } else {
-    //check the keydown event, and increases current value
-    if(keyCodeArray.includes(keyCodes)){
-      if(keyCodes === 87 || keyCodes === 38){
-        gameState.currentValue += countUpdater(gameState.cardUp);
-        buildNewCard('upButton');
-      }
-      if(keyCodes === 65 || keyCodes === 37){
-        gameState.currentValue += countUpdater(gameState.cardLeft);
-        buildNewCard('leftButton');
-      }
-      if(keyCodes === 68 || keyCodes === 39){
-        gameState.currentValue += countUpdater(gameState.cardRight);
-        buildNewCard('rightButton');
-      }
-      if(keyCodes === 83 || keyCodes === 40){
-        gameState.currentValue += countUpdater(gameState.cardDown);
-        buildNewCard('downButton');
-      }
-    }
-  }  
+    cards.removeEventListener('click', handleClick);
+    generateScoreboard();
+  }
   //save to local storage
   storeInLocal ('gameState', gameState);
 }

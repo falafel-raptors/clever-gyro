@@ -19,7 +19,7 @@ var gameState = {
   timer: 0
 };
 
-var leaderBoard = [3.2, 10.4, 9.5, 1.1];
+var leaderBoard = [];
 
 //requirements:
 //function to generate target value
@@ -42,6 +42,9 @@ function timer (){
 
 
 function init(){
+  if(localStorage.leaderBoard){
+    leaderBoard = returnFromLocal('leaderBoard');
+  }
   if(localStorage.gameState){
     gameState = returnFromLocal('gameState');
     buildTarget(gameState.targetValue);
@@ -50,8 +53,8 @@ function init(){
     generateTarget();
     // writeRules('modal');
     generateDeck();
+    generateScoreboard();
   }
-  generateScoreboard();
   console.log('gamestate', gameState);
   //trevor added for timer
   timer();
@@ -60,5 +63,6 @@ function init(){
 init();
 
 function saveState(){
+  storeInLocal('leaderBoard', leaderBoard);
   storeInLocal('gameState', gameState);
 }

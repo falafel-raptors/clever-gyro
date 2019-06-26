@@ -1,5 +1,5 @@
 'use strict';
-/*global gameState randomInclusiveNumGen */
+/*global gameState randomInclusiveNumGen difficulty */
 /* eslint-disable no-unused-vars */
 
 //use the array index to return our operator as a string
@@ -7,7 +7,7 @@ function generateOperator() {
   //array of all operators in the game
   var arrayOfOperators =  ['+', '-', '*', '/', '%'];
   //choose a random index value
-  var randomIndex = randomInclusiveNumGen(0, 4);
+  var randomIndex = randomInclusiveNumGen(0, difficulty);
   //make modulo less likely, and pluses and negatives more.
   if (randomIndex === 4){
     var makeModuloLessCommon = randomInclusiveNumGen(0, 2);

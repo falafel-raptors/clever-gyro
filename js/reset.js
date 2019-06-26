@@ -7,6 +7,9 @@ document.getElementById('reset').onclick = function() {
 
 function resetGame(){
   if(localStorage.gameState){
+    if(gameState.currentValue === gameState.targetValue){
+      timer();
+    }
     document.getElementById('upButton').innerHTML = '';
     localStorage.removeItem('gameState');
     gameState.currentValue = 0;

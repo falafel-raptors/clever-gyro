@@ -39,9 +39,4 @@ document.addEventListener('DOMContentLoaded', function() {
   //initialize the modal on trigger
   var instances = M.Modal.init(elems);
 
-
-
-
-
-
 });

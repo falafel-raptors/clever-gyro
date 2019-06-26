@@ -12,15 +12,27 @@
   </head>
   <body>
     <header>
-      <input id="reset" type="button" value="reset">
-      <h1 id="target-value"></h1>
-      <input id="rules" type="button" value="rules">
+      <ul id="header">
+        <li><input id="reset" type="button" value="reset"></li>
+        <li><h1 id="target-value"></h1></li>
+        <li>
+          <!-- Modal Trigger -->
+          <a class="modal-trigger" href="#modal1">Rules</a>
+          <!-- Modal Structure -->
+          <div id="modal1" class="modal open">
+            <div class="modal-content">
+              <h4>Game Rules</h4>
+              <p>Welcome to the Game!  You have a target number you must reach.  Choose one of four cards, and get to your target.  May the odds be ever in your favor.</p>
+            </div>
+            <div class="modal-footer">
+              <a href="#" class="modal-close btn-flat">Close</a>
+            </div>
+          </div>
+        </li>
+      </ul>
     </header>
 
     <main>
-      <!-- <aside id="modal">
-        <p></p>
-      </aside> -->
       <section id="cards" class="game-board">
         <div class="box" class="empty" ></div>
         <div class="card" class="box" id="upButton">Up</div>
@@ -36,16 +48,34 @@
     </main>
 
     <footer>
-      <p id="timer">10.5</p>
-      <p><a href="about.html"><img src="assets/logo.png" height="50px" width="200px"></a></p>
-      <input type="button" value="leaderboard">
+      <ul>
+        <li><p id="timer">10.5</p></li>
+        <li><p><a href="about.html"><img src="assets/logo.png" height="50px" width="200px"></a></p></li>
+        <li>
+          <!-- Modal Trigger -->
+          <a class="modal-trigger" href="#modal1">Leaderboard</a>
+
+          <!-- Modal Structure -->
+          <div id="modal1" class="modal bottom-sheet">
+            <div class="modal-content">
+              <h4>Leaderboard</h4>
+              <p>A bunch of text</p>
+            </div>
+            <div class="modal-footer">
+              <a href="#!" class="modal-close btn-flat">Close</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <!-- <input type="button" value="leaderboard"> -->
+      
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="js/modal.js"></script>
     <script src="js/reset.js"></script>
     <script src="js/buildHTML.js"></script>
     <script src="js/random-num-gen.js"></script>
     <script src="js/local-storage.js"></script>
-    <!-- <script src="js/modal.js"></script> -->
     <script src="js/card.js"></script>
     <script src="js/generate-target.js"></script>
     <script src="js/win-check.js"></script>

@@ -1,5 +1,5 @@
 'use strict';
-/*global returnFromLocal buildTarget buildCards generateTarget writeRules generateDeck */
+/*global returnFromLocal buildTarget buildCards generateTarget writeRules generateScoreboard generateDeck */
 
 // globals
 var gameState = {
@@ -18,6 +18,8 @@ var gameState = {
   targetMax: 200,
   timer: 0
 };
+
+var leaderBoard = [3.2, 10.4, 9.5, 1.1];
 
 //requirements:
 //function to generate target value
@@ -49,6 +51,7 @@ function init(){
     // writeRules('modal');
     generateDeck();
   }
+  generateScoreboard();
   console.log('gamestate', gameState);
   //trevor added for timer
   timer();

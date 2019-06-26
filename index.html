@@ -9,15 +9,16 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="assets/raptor.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   </head>
   <body>
-    <header>
-      <ul id="header">
-        <li><input id="reset" type="button" value="reset"></li>
-        <li><h1 id="target-value"></h1></li>
+    <header id="header">
+      <ul>
+        <li><input id="reset" type="button" value="RESET"></li>
+        <li><p>Target Value</p><p id="target-value"></p></li>
         <li>
           <!-- Modal Trigger -->
-          <a class="modal-trigger" href="#modal1">Rules</a>
+          <a class="modal-trigger" href="#modal1">RULES</a>
           <!-- Modal Structure -->
           <div id="modal1" class="modal open">
             <div class="modal-content">
@@ -35,13 +36,13 @@
     <main>
       <section id="cards" class="game-board">
         <div class="box" class="empty" ></div>
-        <div class="card" class="box" id="upButton">Up</div>
+        <div class="card" class="box" id="upButton"></div>
         <div class="box" class="empty"></div>
-        <div class="card" class="box" id="leftButton">Left</div>
-        <div id="currentValue" class="box">Current Value</div>
-        <div class="card" class="box" id="rightButton">Right</div>
+        <div class="card" class="box" id="leftButton"></div>
+        <div id="currentValue" class="box"></div>
+        <div class="card" class="box" id="rightButton"></div>
         <div class="box" class="empty"></div>
-        <div class="card" class="box" id="downButton">Down</div>
+        <div class="card" class="box" id="downButton"></div>
         <div class="box" class="empty"></div>
       </section>
       
@@ -52,8 +53,8 @@
         <li><p id="timer">10.5</p></li>
         <li><p><a href="about.html"><img src="assets/logo.png" height="50px" width="200px"></a></p></li>
         <li>
-          <a class="modal-trigger" href="#modal1">Leaderboard</a>
-          <div id="modal1" class="modal bottom-sheet">
+          <a class="modal-trigger" href="#modal2">Leaderboard</a>
+          <div id="modal2" class="modal bottom-sheet">
             <div class="modal-content">
               <h4>Leaderboard</h4>
               <p>A bunch of text</p>

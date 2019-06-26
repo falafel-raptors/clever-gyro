@@ -74,3 +74,7 @@ Project One for Codefellows 201, A game!
     * use "talking stick" to ensure all concerns are aired and expressed
     * when circle ends, the issue is CLOSED. Resolution complete.
   * if circle cannot solve bring issue to Nicholas
+
+
+## Assets
+* Background image: https://www.vecteezy.com/vector-art/181748-abstract-forest-landscape

@@ -6,19 +6,26 @@
 
 body {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-  background-color: #99858E;
+  height: 100%;
+  background: url(/assets/forest-landscape.jpg);
+  background-repeat: no-repeat;
+  background-size: inherit;
 }
 
 header {
-  width: 100%;
-  background-color: #7B4A5C;
-  margin-top: 0;
+  width: 95%;
+  background-color: rgb(230, 218, 222);
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 50px;
   height: 100px;
   color: white;
+  border-radius: 20px;
 }
 
 header > ul {
   height: 100px;
+  width: 100%;
   display: flex;
   align-items: center;
 }
@@ -28,71 +35,42 @@ ul > li {
   float: left;
 }
 
-/* header{
-  position: absolute;
-  left: 0;
-  top: 0;
-  margin: 0 auto;
-  padding-left: 4%;
-  padding-right: 4%;
-} */
-
-/* header > input {
-  background-color: #be66c4;
-  display: inline-block;
-  width: 20%;
-  font-size: 1.9em;
-  border: 0;
-  border-radius: 5px;
-   */
-/* } */
-/* #target-value { */
-  /* width: 5%; */
-  /* text-align: center;
-  display: inline-block;
-  margin-top: 35px;
-  font-size: 2.2em;
-  border-radius: 200px;
+header > ul > li:nth-child(2){
   background-color: #1f1433;
-  margin-left: 16.5%;
-  margin-right: 16.5%;
-  padding-left: 2.5%;
-  padding-right: 2.5%;
-  padding-top: .75%;
-} */
-/* header for about page */
-.aboutheader{
-width: 100%;
-text-align: center;
-display: inline-block;
-margin-top: 35px;
-font-size: 2.2em;
-border-radius: 200px;
-background-color: #1f1433;
+  margin-top: 30px;
+  border: dashed white 3px;
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
 }
 
-/* end of header */
+header > ul > li:nth-child(2) > p {
+  text-align: center;
+  line-height: 60px;
+}
+
+header > ul > li:nth-child(2) > p:nth-child(2) > h1{
+  margin: 0 auto;
+}
 
 main {
-  text-align: center;
   width: 100%;
   height: 100%;
-  /* margin-top: 200px; */
 }
 
-#modal{
-  background-color: blanchedalmond;
+
+.modal {
+  /* background-color: !important; */
+  color: rgb(147, 135, 135);
   margin: 5%;
-  font-size: 2em;
-  border-radius: 15px;
-  opacity: .9;
-
+  font-size: 1.5em;
+  /* opacity: .5; */
 }
+
 /* allcards */
 #cards{
   min-height: 400px;
   justify-content: center;
-
   max-width: 600px;
   max-height: 500px;
   margin: auto;
@@ -106,6 +84,7 @@ main {
   background-color: #87A86D;
   padding: 15%;
 }
+
 /* flexbox stuff */
 .game-board { 
   display: grid;
@@ -114,7 +93,6 @@ main {
 }
 
 .box {
-  background: #99858E;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -143,21 +121,42 @@ main {
   
 }
 
-footer{
-  background-color: #1f1433;
-  width: 100%;
+/* 
+header {
+  width: 95%;
+  background-color: #7B4A5C;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 50px;
   height: 100px;
   color: white;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  text-align: center;
+  border-radius: 20px;
+}
+
+header > ul {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+} */
+
+footer{
+  background-color: #1f1433;
+  width: 95%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  height: 65px;
+  color: white;
+  position: fixed;
+  bottom: 20px;
+  border-radius: 15px;
 }
 
 footer > ul {
   height: 100px;
   display: flex;
   align-items: center;
+  
 }
 
 footer > p > a {
@@ -165,19 +164,46 @@ footer > p > a {
   text-decoration: none;
   font-size: 1.6em;
 }
+
 a:hover{
   color: black;
 }
+
 footer > p {
-  /* background-color: black; */
   padding-top: 50px;
   line-height: auto;
-  /* padding: 20px; */
 }
 
 
-/* about page stuff */
+
+/* About Page */
+header > h1 {
+  text-align: center;
+  line-height: 100px;
+  font-size: 2.2em;
+}
+
 #teampic{
   border-radius: 15px;
   border: 1px solid black;
+}
+
+
+
+
+
+
+/* Desktop view */
+@media screen and (min-width: 768px){
+  body {
+    background-size: cover;
+  }
+
+}
+
+/* Mobile view */
+@media screen and (min-width: 480px) and (max-width: 767px){
+  body {
+    background-size: inherit;
+  } 
 }

@@ -1,5 +1,6 @@
 'use strict';
-/*global gameState clearHTML htmlTextHack generateDeck randomInclusiveNumGen storeInLocal */
+/*global gameState clearHTML htmlTextHack randomInclusiveNumGen storeInLocal generateOperator */
+/* eslint-disable no-unused-vars */
 
 //iterate over our cards, including current value
 var cardArray = ['upButton', 'downButton', 'leftButton', 'rightButton'];

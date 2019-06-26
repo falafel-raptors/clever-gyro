@@ -1,5 +1,5 @@
 'use strict';
-/*global gameState generateScoreboard cards handleClick storeInLocal buildNewCard countUpdater */
+/*global gameState generateScoreboard cards handleClick storeInLocal buildNewCard doMath */
 
 document.addEventListener('keydown', handleKeyDown, false);
 
@@ -7,7 +7,7 @@ document.addEventListener('keydown', handleKeyDown, false);
 function handleKeyDown(e) {
   var keyCodes = e.keyCode;
   var keyCodeArray = [87, 38, 65, 37, 68, 39, 83, 40];
-  
+
   if(keyCodeArray.indexOf(keyCodes) >-1){
     e.preventDefault();
   }

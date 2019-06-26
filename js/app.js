@@ -1,5 +1,5 @@
 'use strict';
-/*global returnFromLocal buildTarget buildCards generateTarget writeRules storeInLocal generateScoreboard generateDeck myTimer */
+/*global returnFromLocal buildTarget buildCards generateTarget storeInLocal generateScoreboard generateDeck myTimer */
 /* eslint-disable no-unused-vars */
 
 // globals
@@ -45,8 +45,6 @@ function init(){
     generateDeck();
     generateScoreboard();
   }
-  console.log('gamestate', gameState);
-  //trevor added for timer
   timer();
 }
 

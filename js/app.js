@@ -16,7 +16,7 @@ var gameState = {
   maxRange: 10,
   targetMin: 100,
   targetMax: 200,
-  time: 99.3
+  timer: 99.3
 };
 
 var leaderBoard = [3.2, 10.4, 9.5, 1.1];
@@ -41,13 +41,12 @@ function init(){
     gameState = returnFromLocal('gameState');
     buildTarget(gameState.targetValue);
     buildCards();
-    generateScoreboard();
   }else{
     generateTarget();
     // writeRules('modal');
     generateDeck();
-    generateScoreboard();
   }
+  generateScoreboard();
   console.log('gamestate', gameState);
 }
 

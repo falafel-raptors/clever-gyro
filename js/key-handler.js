@@ -12,7 +12,6 @@ function handleKeyDown(e) {
     e.preventDefault();
   }
   if(gameState.currentValue === gameState.targetValue){
-    leaderBoard.push(gameState.time);
     generateScoreboard();
     document.removeEventListener('keydown', handleKeyDown, false);
     // TODO: Produce modal

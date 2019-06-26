@@ -15,7 +15,8 @@ var gameState = {
   minRange: 1,
   maxRange: 10,
   targetMin: 100,
-  targetMax: 200
+  targetMax: 200,
+  timer: 0
 };
 
 //requirements:
@@ -31,6 +32,11 @@ var gameState = {
 //function to handle keys
 //CSS
 
+//Trevor added for timer
+var interval;
+function timer (){
+  interval = setInterval(myTimer,100);
+}
 
 
 function init(){
@@ -40,10 +46,16 @@ function init(){
     buildCards();
   }else{
     generateTarget();
-    writeRules('modal');
+    // writeRules('modal');
     generateDeck();
   }
   console.log('gamestate', gameState);
+  //trevor added for timer
+  timer();
 }
 
 init();
+
+function saveState(){
+  storeInLocal('gameState', gameState);
+}

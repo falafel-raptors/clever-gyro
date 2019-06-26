@@ -1,5 +1,6 @@
 'use strict';
-/*global gameState clearHTML htmlTextHack generateDeck randomInclusiveNumGen storeInLocal */
+/*global gameState clearHTML htmlTextHack randomInclusiveNumGen storeInLocal generateOperator handleClick handleKeyDown */
+/* eslint-disable no-unused-vars */
 
 //iterate over our cards, including current value
 var cardArray = ['upButton', 'downButton', 'leftButton', 'rightButton'];
@@ -7,21 +8,25 @@ var cardArray = ['upButton', 'downButton', 'leftButton', 'rightButton'];
 //To change individual card values
 function buildNewCard(cardButton) {
   clearHTML(cardButton); // ex: 'upButton'
+  //create random number
   var ranNum = randomInclusiveNumGen(gameState.minRange, gameState.maxRange);
+  //working here -- wedjk.  generate a random operator
+  var operatorChosen = generateOperator();
+
   if(cardButton === 'upButton'){
-    gameState.cardUp = {int: ranNum, str: String(ranNum), operator: gameState.cardUp.operator};
+    gameState.cardUp = {int: ranNum, str: String(ranNum), operator: operatorChosen };
     htmlTextHack('p', gameState.cardUp.operator+gameState.cardUp.str, cardButton);
   }
   if(cardButton === 'downButton'){
-    gameState.cardDown = {int: ranNum, str: String(ranNum), operator: gameState.cardDown.operator};
+    gameState.cardDown = {int: ranNum, str: String(ranNum), operator: operatorChosen};
     htmlTextHack('p', gameState.cardDown.operator+gameState.cardDown.str, cardButton);
   }
   if(cardButton === 'leftButton'){
-    gameState.cardLeft = {int: ranNum, str: String(ranNum), operator: gameState.cardLeft.operator};
+    gameState.cardLeft = {int: ranNum, str: String(ranNum), operator: operatorChosen};
     htmlTextHack('p', gameState.cardLeft.operator+gameState.cardLeft.str, cardButton);
   }
   if(cardButton === 'rightButton'){
-    gameState.cardRight = {int: ranNum, str: String(ranNum), operator: gameState.cardRight.operator};
+    gameState.cardRight = {int: ranNum, str: String(ranNum), operator: operatorChosen};
     htmlTextHack('p', gameState.cardRight.operator+gameState.cardRight.str, cardButton);
   }
   clearHTML('currentValue');
@@ -51,25 +56,26 @@ function generateDeck(){
   var left = randomInclusiveNumGen(gameState.minRange, gameState.maxRange);
   var right = randomInclusiveNumGen(gameState.minRange, gameState.maxRange);
 
+  //randomly generate our operators for init cards
   var cardUp = {
     int: up,
     str: String(up),
-    operator: '-'
+    operator: generateOperator()
   };
   var cardDown = {
     int: down,
     str: String(down),
-    operator: '-'
+    operator: generateOperator()
   };
   var cardRight = {
     int: right,
     str: String(right),
-    operator: '+'
+    operator: generateOperator()
   };
   var cardLeft = {
     int: left,
     str: String(left),
-    operator: '+'
+    operator: generateOperator()
   };
 
   //save into gameState
@@ -84,9 +90,6 @@ function generateDeck(){
   cards.addEventListener('click', handleClick);
   document.addEventListener('keydown', handleKeyDown, false);
 
-
   //save to local storage
   storeInLocal('gameState', gameState);
 }
-
-

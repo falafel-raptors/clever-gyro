@@ -1,5 +1,5 @@
 'use strict';
-/*global gameState generateDeck storeInLocal countUpdater */
+/*global gameState buildNewCard storeInLocal countUpdater */
 
 var cards = document.getElementById('cards');
 
@@ -7,6 +7,9 @@ function handleClick (e) {
   e.preventDefault();
   //check the element based on that p, and increases current value
   if(gameState.currentValue === gameState.targetValue){
+    leaderBoard.push(gameState.time);
+    console.log(leaderBoard);
+    generateScoreboard();
     cards.removeEventListener('click', handleClick);
     // TODO: produce modal
   } else {

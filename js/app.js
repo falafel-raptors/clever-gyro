@@ -1,5 +1,5 @@
 'use strict';
-/*global returnFromLocal buildTarget buildCards generateTarget writeRules generateDeck */
+/*global returnFromLocal buildTarget buildCards generateTarget writeRules generateScoreboard generateDeck */
 
 // globals
 var gameState = {
@@ -15,8 +15,11 @@ var gameState = {
   minRange: 1,
   maxRange: 10,
   targetMin: 100,
-  targetMax: 200
+  targetMax: 200,
+  time: 99.3
 };
+
+var leaderBoard = [3.2, 10.4, 9.5, 1.1];
 
 //requirements:
 //function to generate target value
@@ -38,10 +41,12 @@ function init(){
     gameState = returnFromLocal('gameState');
     buildTarget(gameState.targetValue);
     buildCards();
+    generateScoreboard();
   }else{
     generateTarget();
-    writeRules('modal');
+    // writeRules('modal');
     generateDeck();
+    generateScoreboard();
   }
   console.log('gamestate', gameState);
 }

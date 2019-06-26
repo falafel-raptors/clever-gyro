@@ -56,6 +56,7 @@ header > ul > li:nth-child(2) > p:nth-child(2) > h1{
 main {
   width: 100%;
   height: 100%;
+  text-align: center;
 }
 
 
@@ -67,7 +68,7 @@ main {
   /* opacity: .5; */
 }
 
-/* allcards */
+/* Game Board */
 #cards{
   min-height: 400px;
   justify-content: center;
@@ -85,7 +86,6 @@ main {
   padding: 15%;
 }
 
-/* flexbox stuff */
 .game-board { 
   display: grid;
   grid-template-rows: 30% 30% 30%;
@@ -98,7 +98,6 @@ main {
   justify-content: center;
   color: #AAA;
 }
-/* end flexbox */
 
 .card > p {
   /* background-color: black; */
@@ -106,7 +105,6 @@ main {
   align-items: center;
   justify-content: center;
   font-size: 2.2em;
-  
 }
 
 .empty {
@@ -118,45 +116,25 @@ main {
   color: white;
   border-radius: 200px;
   font-size: 2.2em;
-  
 }
-
-/* 
-header {
-  width: 95%;
-  background-color: #7B4A5C;
-  margin: 0 auto;
-  margin-top: 20px;
-  margin-bottom: 50px;
-  height: 100px;
-  color: white;
-  border-radius: 20px;
-}
-
-header > ul {
-  height: 100px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-} */
 
 footer{
   background-color: #1f1433;
-  width: 95%;
-  margin-left: 2.5%;
-  margin-right: 2.5%;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
   height: 65px;
   color: white;
   position: fixed;
   bottom: 20px;
   border-radius: 15px;
+  text-align: center;
 }
 
 footer > ul {
-  height: 100px;
+  height: 65px;
   display: flex;
   align-items: center;
-  
 }
 
 footer > p > a {

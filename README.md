@@ -2,7 +2,7 @@
 Project One for Codefellows 201, A game!
 
 ## Project Summary
-* Math game
+* A Game of numbers!  The goal of our game is to play with four displayed cards.  Each card has a value and an operator.  You will take your current value and use the operator and value with your current, trying to reach the target, EXACTLY.  Victory displays a leaderboard with your time completed.  Local storage is used to preserve your cards, current and target value, and time.  You can reset the game, or display the rules with the buttons on the header.
 
 ## MVP
 * HTML and CSS
@@ -74,3 +74,10 @@ Project One for Codefellows 201, A game!
     * use "talking stick" to ensure all concerns are aired and expressed
     * when circle ends, the issue is CLOSED. Resolution complete.
   * if circle cannot solve bring issue to Nicholas
+
+## Assets
+* Background image: https://www.vecteezy.com/vector-art/181748-abstract-forest-landscape
+
+  
+### Trello link: https://trello.com/b/IJDxZcJo/clever-gyro
+### Prezi link: https://prezi.com/p/d2kwhelq-7tq/

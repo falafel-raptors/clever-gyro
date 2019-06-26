@@ -17,10 +17,11 @@ var gameState = {
   maxRange: 10,
   targetMin: 100,
   targetMax: 200,
-  timer: 0
+  timer: 0,
 };
 
 var leaderBoard = [];
+var difficulty = 1;
 
 var interval;
 function timer (){
@@ -30,11 +31,15 @@ function timer (){
 function saveState(){
   storeInLocal('leaderBoard', leaderBoard);
   storeInLocal('gameState', gameState);
+  storeInLocal('difficulty', difficulty);
 }
 
 function init(){
   if(localStorage.leaderBoard){
     leaderBoard = returnFromLocal('leaderBoard');
+  }
+  if(localStorage.difficulty){
+    difficulty = returnFromLocal('difficulty');
   }
   if(localStorage.gameState){
     gameState = returnFromLocal('gameState');

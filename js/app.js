@@ -1,5 +1,6 @@
 'use strict';
-/*global returnFromLocal buildTarget buildCards generateTarget writeRules generateScoreboard generateDeck */
+/*global returnFromLocal buildTarget buildCards generateTarget writeRules storeInLocal generateScoreboard generateDeck myTimer */
+/* eslint-disable no-unused-vars */
 
 // globals
 var gameState = {
@@ -21,25 +22,15 @@ var gameState = {
 
 var leaderBoard = [];
 
-//requirements:
-//function to generate target value
-//function to generate cards
-//generate first four numbers
-//function to check win condition
-//function to reset game
-//function to target modal
-//function to save game state
-//function to load game state
-//function to handle clicks
-//function to handle keys
-//CSS
-
-//Trevor added for timer
 var interval;
 function timer (){
   interval = setInterval(myTimer,100);
 }
 
+function saveState(){
+  storeInLocal('leaderBoard', leaderBoard);
+  storeInLocal('gameState', gameState);
+}
 
 function init(){
   if(localStorage.leaderBoard){
@@ -51,7 +42,6 @@ function init(){
     buildCards();
   }else{
     generateTarget();
-    // writeRules('modal');
     generateDeck();
     generateScoreboard();
   }
@@ -61,8 +51,3 @@ function init(){
 }
 
 init();
-
-function saveState(){
-  storeInLocal('leaderBoard', leaderBoard);
-  storeInLocal('gameState', gameState);
-}

@@ -1,5 +1,5 @@
 'use strict';
-
+/*global gameState generateTarget generateDeck storeInLocal timer */
 
 document.getElementById('reset').onclick = function() {
   resetGame();
@@ -13,7 +13,7 @@ function resetGame(){
     gameState.currentValue = 0;
     //Trevor added for timer
     gameState.timer = 0;
-    
+
     generateTarget();
     generateDeck();
     storeInLocal('gameState', gameState);

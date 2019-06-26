@@ -1,6 +1,7 @@
 'use strict';
+/*global gameState interval*/
+/* eslint-disable no-unused-vars */
 
-var time =0;
 function myTimer(){
   var timeEl = document.getElementById('timer');
   gameState.timer++;

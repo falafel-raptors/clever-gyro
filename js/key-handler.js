@@ -1,5 +1,5 @@
 'use strict';
-/*global gameState generateDeck storeInLocal buildNewCard countUpdater */
+/*global gameState generateScoreboard cards handleClick storeInLocal buildNewCard countUpdater */
 
 document.addEventListener('keydown', handleKeyDown, false);
 
@@ -34,7 +34,6 @@ function handleKeyDown(e) {
     document.removeEventListener('keydown', handleKeyDown, false);
     cards.removeEventListener('click', handleClick);
     generateScoreboard();
-    // TODO: Produce modal
   }
   //save to local storage
   storeInLocal ('gameState', gameState);

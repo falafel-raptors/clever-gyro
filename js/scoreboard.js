@@ -1,11 +1,12 @@
 'use strict';
 /*global gameState appendChildtoParent leaderBoard */
+/* eslint-disable no-unused-vars */
+
 var tbody = document.getElementById('leaderBody');
 
 function generateScoreboard(){
   tbody.innerHTML = '';
-  // var scoreboardArray = [3.2, 10.4, 9.5, 1.1];
-  let time = (gameState.timer / 10) + 1;
+  let time = (gameState.timer / 10) + .1;
   leaderBoard.push(time);
   let sortedScoreboard = leaderBoard.sort(function(a,b){return a-b});
   console.log(sortedScoreboard);
@@ -19,6 +20,3 @@ function generateScoreboard(){
     appendChildtoParent(tbody, trEl);
   }
 }
-
-// generateScoreboard();
-

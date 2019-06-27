@@ -101,6 +101,8 @@ function buildCards(){
 
   if(gameState.targetValue === gameState.currentValue){
     document.getElementById('target-circle').style.backgroundColor = '#0ED900';
+    document.getElementById('currentValue').style.backgroundImage = 'url(\'assets/pita-raptor.png\')';
+    document.getElementById('currentValue').style.backgroundSize = '175px 175px';
   }
 }
 

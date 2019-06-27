@@ -6,7 +6,7 @@ Project One for Codefellows 201, A game!
 ## Project Summary
 * A Game of numbers!  The goal of our game is to play with four displayed cards.  Each card has a value and an operator.  You will take your current value and use the operator and value with your current, trying to reach the target, EXACTLY.  Victory displays a leaderboard with your time completed.  Local storage is used to preserve your cards, current and target value, and time.  You can reset the game, or display the rules with the buttons on the header.
 
-![screen capture](../assets/screen.png)
+![screen capture](assets/screen.png)
 
 ## MVP
 * HTML and CSS

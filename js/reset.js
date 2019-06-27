@@ -25,5 +25,7 @@ function resetGame(){
     generateDeck();
     storeInLocal('gameState', gameState);
     document.getElementById('target-circle').style.backgroundColor = '';
+    document.getElementById('currentValue').style.backgroundImage = '';
+    document.getElementById('currentValue').style.backgroundSize = '';
   }
 }

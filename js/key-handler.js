@@ -16,7 +16,6 @@ function handleKeyDown(e) {
     if(keyCodes === 87 || keyCodes === 38){
       gameState.currentValue = doMath(gameState.cardUp);
       buildNewCard('upButton');
-      
     }
     if(keyCodes === 65 || keyCodes === 37){
       gameState.currentValue = doMath(gameState.cardLeft);

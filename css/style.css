@@ -93,6 +93,7 @@ header > ul > li:nth-child(2) > p:nth-child(2) > h1{
 
 .modal-content > button {
   margin-right: 10px;
+  margin-bottom: 10px;
   background-color: rgb(121, 168, 160);
   color: white;
   padding: 10px;
@@ -208,23 +209,32 @@ section#teamInfo > p {
 
 #teampic{
   border-radius: 15px;
-  border: 1px solid black;
+  border: 1px solid #1f1433;;
   margin-bottom: 20px;
 }
 
 section#individualInfo {
-  margin: 2% 20%;
+  margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  color: green;
+}
+
+section#individualInfo > div {
+  border: 1px dashed #1f1433;
+  padding: 15px;
+  background-color: rgb(230, 218, 222, 0.5);
+  border-radius: 50%;
 }
 
 section#individualInfo > div > h2 {
-  margin: 10px 10px;
+  margin: 8px 8px;
+  text-transform: uppercase;
 }
 
 section#individualInfo > div > a {
   color: #1f1433;
-  margin: 0 5px;
+  margin: 5px 5px;
 }
 
 section#individualInfo > div > a:hover {
@@ -246,6 +256,14 @@ section#individualInfo > div > a:hover {
     width: 40%;
     height: 350px;
   }
+
+  main > section > p {
+    font-size: 26px;
+  }
+
+  section#individualInfo {
+    margin: 0 18%;
+  }
 }
 
 /* Mobile view */
@@ -258,5 +276,10 @@ section#individualInfo > div > a:hover {
     width: 40%;
     height: 100px;
   }
+
+  main > section > p {
+    font-size: 20px;
+  }
 }
+
 

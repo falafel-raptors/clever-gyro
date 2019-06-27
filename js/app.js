@@ -7,7 +7,7 @@ var gameState = {
   hasSeenRules: false,
   rulesView: false,
   victoryView: false,
-  targetValue: 0,
+  targetValue: 1,
   currentValue: 0,
   cardUp: {
     int: 0,
@@ -64,7 +64,7 @@ function init(){
   }else{
     generateTarget();
     generateDeck();
-    generateScoreboard();
+    // generateScoreboard();
   }
   timer();
 }
@@ -74,7 +74,7 @@ function hardReset(){
     hasSeenRules: false,
     rulesView: false,
     victoryView: false,
-    targetValue: 0,
+    targetValue: 1,
     currentValue: 0,
     cardUp: {
       int: 0,

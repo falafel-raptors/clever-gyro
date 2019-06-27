@@ -6,10 +6,10 @@ var tbody = document.getElementById('leaderBody');
 
 function generateScoreboard(){
   tbody.innerHTML = '';
-  let time = gameState.timer / 10;
-  time += 0.1;
   // removes initial 0.1 push when page first loads
-  if(gameState.targetValue !== 0){
+  if(gameState.currentValue === gameState.targetValue){
+    let time = gameState.timer / 10;
+    time += 0.1;
     leaderBoard.push(time.toFixed(1));
   }
   let sortedScoreboard = leaderBoard.sort(function(a,b){return a-b});

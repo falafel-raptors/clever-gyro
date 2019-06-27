@@ -31,7 +31,7 @@ var gameState = {
   },
   minRange: 1,
   maxRange: 10,
-  targetMin: 1,
+  targetMin: 11,
   targetMax: 50,
   timer: 0,
 };
@@ -98,7 +98,7 @@ function hardReset(){
     },
     minRange: 1,
     maxRange: 10,
-    targetMin: 1,
+    targetMin: 11,
     targetMax: 50,
     timer: 0,
   };

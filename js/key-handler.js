@@ -1,5 +1,6 @@
 'use strict';
-/*global gameState generateScoreboard cards handleClick storeInLocal buildNewCard doMath */
+/*global gameState generateScoreboard cards handleClick storeInLocal buildNewCard doMath leaderBoard playAudio */
+/* eslint-disable no-unused-vars */
 
 document.addEventListener('keydown', handleKeyDown, false);
 

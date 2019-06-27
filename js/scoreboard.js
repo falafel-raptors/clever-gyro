@@ -1,5 +1,5 @@
 'use strict';
-/*global gameState appendChildtoParent leaderBoard */
+/*global appendChildtoParent leaderBoard */
 /* eslint-disable no-unused-vars */
 
 var tbody = document.getElementById('leaderBody');

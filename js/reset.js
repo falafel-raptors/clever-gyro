@@ -1,5 +1,6 @@
 'use strict';
 /*global gameState timer generateScoreboard generateTarget generateDeck storeInLocal */
+/* eslint-disable no-unused-vars */
 
 document.getElementById('reset').onclick = function() {
   resetGame();

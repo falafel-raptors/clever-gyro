@@ -38,7 +38,6 @@ function generateOperator() {
       randomIndex = 2;
     }
   }
-
   //return operator as string
   return arrayOfOperators[randomIndex];
 }

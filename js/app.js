@@ -64,8 +64,8 @@ function init(){
   }else{
     generateTarget();
     generateDeck();
-    // generateScoreboard();
   }
+  generateScoreboard();
   timer();
 }
 

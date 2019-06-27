@@ -7,7 +7,7 @@
 body {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   height: 100%;
-  background: url(/assets/forest-landscape.jpg);
+  background: url(../assets/forest-landscape.jpg);
   background-repeat: no-repeat;
   background-size: inherit;
 }
@@ -34,7 +34,7 @@ main {
   color: rgb(147, 135, 135);
   margin: 5%;
   font-size: 1em;
-  line-height: 1.6em;
+  line-height: 2em;
 }
 
 footer{
@@ -85,6 +85,44 @@ header > ul > li:nth-child(2) > p:nth-child(2) > h1{
   color: rgb(85, 58, 64);
 }
 
+
+/* Modal styles */
+.modal-content > p {
+  margin-bottom: 20px;
+} 
+
+.modal-content > button {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  background-color: rgb(121, 168, 160);
+  color: white;
+  padding: 10px;
+  position: relative;
+  border: 1px dashed #1f1433;
+}
+
+#easy:after, #medium:after, #impossible:after, #ludicrous:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: rgba(255,255,255,0.4);
+  transition: none;
+  -webkit-transition: none;
+  -moz-transition: none;
+}
+
+#easy:hover:after, #medium:hover:after, #impossible:hover:after, #ludicrous:hover:after {
+  width: 120%;
+  background-color: rgba(255,255,255,0);
+  -webkit-transition: all 0.4s ease-in-out;
+	-moz-transition: all 0.4s ease-in-out;
+	transition: all 0.4s ease-in-out;
+}
+
+
 /* Game board styles */
 .game-board { 
   display: grid;
@@ -113,6 +151,10 @@ header > ul > li:nth-child(2) > p:nth-child(2) > h1{
   color: rgb(92, 112, 129);
   box-shadow: inset 0 0 10px #000000;
   margin: 10px 10px;
+}
+
+.card.box:active {
+  background-color: rgb(182, 231, 182);
 }
 
 #currentValue {
@@ -167,23 +209,32 @@ section#teamInfo > p {
 
 #teampic{
   border-radius: 15px;
-  border: 1px solid black;
+  border: 1px solid #1f1433;;
   margin-bottom: 20px;
 }
 
 section#individualInfo {
-  margin: 2% 20%;
+  margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  color: green;
+}
+
+section#individualInfo > div {
+  border: 1px dashed #1f1433;
+  padding: 15px;
+  background-color: rgb(230, 218, 222, 0.5);
+  border-radius: 50%;
 }
 
 section#individualInfo > div > h2 {
-  margin: 10px 10px;
+  margin: 8px 8px;
+  text-transform: uppercase;
 }
 
 section#individualInfo > div > a {
   color: #1f1433;
-  margin: 0 5px;
+  margin: 5px 5px;
 }
 
 section#individualInfo > div > a:hover {
@@ -205,6 +256,14 @@ section#individualInfo > div > a:hover {
     width: 40%;
     height: 350px;
   }
+
+  main > section > p {
+    font-size: 26px;
+  }
+
+  section#individualInfo {
+    margin: 0 18%;
+  }
 }
 
 /* Mobile view */
@@ -217,5 +276,10 @@ section#individualInfo > div > a:hover {
     width: 40%;
     height: 100px;
   }
+
+  main > section > p {
+    font-size: 20px;
+  }
 }
+
 

@@ -15,7 +15,7 @@
     <header id="header">
       <ul>
         <li><a id="reset" value="RESET" class="links">RESET</a></li>
-        <li><p>Target Value</p><p id="target-value"></p></li>
+        <li id="target-circle"><p>Target Value</p><p id="target-value"></p></li>
         <li>
           <!-- Modal Trigger -->
           <a class="modal-trigger links" href="#modal1">RULES</a>
@@ -23,7 +23,9 @@
           <div id="modal1" class="modal open">
             <div class="modal-content">
               <h4>Game Rules</h4>
-              <p>Welcome to the Game!  You have a target number you must reach.  Choose one of four cards, and get to your target.  May the odds be ever in your favor.</p>
+              <p>Welcome to the Game!  You have a target number you must reach.  Choose one of four cards, to get to your target. Division will always round up! May the odds be ever in your favor.</p>
+
+              <p>Choose your difficulty level. WARNING: ludicrous mode causes the cards to vanish after 2 seconds!</p>
               <button onclick="easy()" id="easy">Easy</button>
               <button onclick="medium()" id="medium">Medium</button>
               <button onclick="hard()" id="impossible">Impossible</button>
@@ -50,6 +52,7 @@
         <div class="box empty"></div>
       </section>
       <p id="raptors"><a href="about.html"><img src="assets/logo.png" height="30px" width="150px"></a></p>
+      <audio src="assets/clever-girl.mp3" id="cleverAudio"></audio>
     </main>
 
     <footer>
@@ -74,6 +77,7 @@
       </ul>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="js/win-audio.js"></script>
     <script src="js/modal.js"></script>
     <script src="js/reset.js"></script>
     <script src="js/build-HTML.js"></script>

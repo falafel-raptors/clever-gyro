@@ -7,27 +7,78 @@ var cardArray = ['upButton', 'downButton', 'leftButton', 'rightButton'];
 
 //To change individual card values
 function buildNewCard(cardButton) {
+  //clear the card text
   clearHTML(cardButton); // ex: 'upButton'
+  //set background to clear (if we were in ludicrious)
+  document.getElementById(cardButton).style.backgroundColor = '';
   //create random number
   var ranNum = randomInclusiveNumGen(gameState.minRange, gameState.maxRange);
-  //working here -- wedjk.  generate a random operator
+  //generate a random operator
   var operatorChosen = generateOperator();
 
   if(cardButton === 'upButton'){
     gameState.cardUp = {int: ranNum, str: String(ranNum), operator: operatorChosen };
     htmlTextHack('p', gameState.cardUp.operator+gameState.cardUp.str, cardButton);
+    //check for difficulty level: ludicrious
+    if (difficulty === 'ludicrous') {
+      //wait
+      setTimeout(function(){
+        //write out inner html to blank
+        clearHTML(cardButton);
+        //change background to black
+        document.getElementById('upButton').style.backgroundColor = 'rgb(92, 112, 129)';
+        // eslint-disable-next-line indent
+        }, 2000 //seconds until it dissappears
+      );//end settimeout
+    }//end ludicrious if check
   }
   if(cardButton === 'downButton'){
     gameState.cardDown = {int: ranNum, str: String(ranNum), operator: operatorChosen};
     htmlTextHack('p', gameState.cardDown.operator+gameState.cardDown.str, cardButton);
+    //check for difficulty level: ludicrious
+    if (difficulty === 'ludicrous') {
+      //wait
+      setTimeout(function(){
+        //write out inner html to blank
+        clearHTML(cardButton);
+        //change background to black
+        document.getElementById('downButton').style.backgroundColor = 'rgb(92, 112, 129)';
+        // eslint-disable-next-line indent
+        }, 2000 //seconds until it dissappears
+      );//end settimeout
+    }//end ludicrious if check
   }
   if(cardButton === 'leftButton'){
     gameState.cardLeft = {int: ranNum, str: String(ranNum), operator: operatorChosen};
     htmlTextHack('p', gameState.cardLeft.operator+gameState.cardLeft.str, cardButton);
+    //check for difficulty level: ludicrious
+    if (difficulty === 'ludicrous') {
+      //wait
+      setTimeout(function(){
+        //write out inner html to blank
+        clearHTML(cardButton);
+        //change background to black
+        document.getElementById('leftButton').style.backgroundColor = 'rgb(92, 112, 129)';
+        // eslint-disable-next-line indent
+        }, 2000 //seconds until it dissappears
+      );//end settimeout
+    }//end ludicrious if check
   }
   if(cardButton === 'rightButton'){
     gameState.cardRight = {int: ranNum, str: String(ranNum), operator: operatorChosen};
     htmlTextHack('p', gameState.cardRight.operator+gameState.cardRight.str, cardButton);
+    //check for difficulty level: ludicrious
+    if (difficulty === 'ludicrous') {
+      //wait
+      setTimeout(function(){
+        //write out inner html to blank
+        clearHTML(cardButton);
+        //change background to black
+        document.getElementById('rightButton').style.backgroundColor = 'rgb(92, 112, 129)';
+        // eslint-disable-next-line indent
+        }, 2000 //seconds until it dissappears
+      );//end settimeout
+    }//end ludicrious if check
   }
   clearHTML('currentValue');
   htmlTextHack('p', String(gameState.currentValue), 'currentValue');
@@ -47,6 +98,10 @@ function buildCards(){
   //clear and build current value div
   clearHTML('currentValue');
   htmlTextHack('p', String(gameState.currentValue), 'currentValue');
+
+  if(gameState.targetValue === gameState.currentValue){
+    document.getElementById('target-circle').style.backgroundColor = 'rgb(145, 235, 140)';
+  }
 }
 
 //first generator that builds all four cards to the screen

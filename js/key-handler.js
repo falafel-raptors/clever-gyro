@@ -3,11 +3,11 @@
 
 document.addEventListener('keydown', handleKeyDown, false);
 
+
 //contains and checks for key press: WASD and arrows UDLR.
 function handleKeyDown(e) {
   var keyCodes = e.keyCode;
   var keyCodeArray = [87, 38, 65, 37, 68, 39, 83, 40];
-
   if(keyCodeArray.indexOf(keyCodes) >-1){
     e.preventDefault();
   }
@@ -33,6 +33,13 @@ function handleKeyDown(e) {
   if(gameState.currentValue === gameState.targetValue){
     document.removeEventListener('keydown', handleKeyDown, false);
     cards.removeEventListener('click', handleClick);
+    let time = gameState.timer / 10;
+    time += 0.1;
+    leaderBoard.push(time.toFixed(1));
+    document.getElementById('currentValue').style.backgroundImage = 'url(\'assets/pita-raptor.png\')';
+    document.getElementById('currentValue').style.backgroundSize = '175px 175px';
+    document.getElementById('target-circle').style.backgroundColor = '#0ED900';
+    playAudio();    
     generateScoreboard();
   }
   //save to local storage

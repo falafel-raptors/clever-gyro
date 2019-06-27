@@ -7,21 +7,37 @@ var gameState = {
   hasSeenRules: false,
   rulesView: false,
   victoryView: false,
-  targetValue: 0,
+  targetValue: 1,
   currentValue: 0,
-  cardUp: 0,
-  cardLeft: 0,
-  cardRight: 0,
-  cardDown: 0,
+  cardUp: {
+    int: 0,
+    str: '0',
+    operator: '+'
+  },
+  cardLeft: {
+    int: 0,
+    str: '0',
+    operator: '+'
+  },
+  cardRight: {
+    int: 0,
+    str: '0',
+    operator: '+'
+  },
+  cardDown: {
+    int: 0,
+    str: '0',
+    operator: '+'
+  },
   minRange: 1,
   maxRange: 10,
-  targetMin: 1,
+  targetMin: 11,
   targetMax: 50,
   timer: 0,
 };
 
 var leaderBoard = [];
-var difficulty = 1;
+var difficulty = 'easy';
 
 var interval;
 function timer (){
@@ -48,9 +64,47 @@ function init(){
   }else{
     generateTarget();
     generateDeck();
-    generateScoreboard();
   }
+  generateScoreboard();
   timer();
+}
+
+function hardReset(){
+  gameState = {
+    hasSeenRules: false,
+    rulesView: false,
+    victoryView: false,
+    targetValue: 1,
+    currentValue: 0,
+    cardUp: {
+      int: 0,
+      str: '0',
+      operator: '+'
+    },
+    cardLeft: {
+      int: 0,
+      str: '0',
+      operator: '+'
+    },
+    cardRight: {
+      int: 0,
+      str: '0',
+      operator: '+'
+    },
+    cardDown: {
+      int: 0,
+      str: '0',
+      operator: '+'
+    },
+    minRange: 1,
+    maxRange: 10,
+    targetMin: 11,
+    targetMax: 50,
+    timer: 0,
+  };
+  leaderBoard = [];
+  difficulty = 'easy';
+  localStorage.clear();
 }
 
 init();

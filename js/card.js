@@ -26,7 +26,7 @@ function buildNewCard(cardButton) {
         //write out inner html to blank
         clearHTML(cardButton);
         //change background to black
-        document.getElementById('upButton').style.backgroundColor = 'black';
+        document.getElementById('upButton').style.backgroundColor = 'rgb(92, 112, 129)';
         // eslint-disable-next-line indent
         }, 2000 //seconds until it dissappears
       );//end settimeout
@@ -42,7 +42,7 @@ function buildNewCard(cardButton) {
         //write out inner html to blank
         clearHTML(cardButton);
         //change background to black
-        document.getElementById('downButton').style.backgroundColor = 'black';
+        document.getElementById('downButton').style.backgroundColor = 'rgb(92, 112, 129)';
         // eslint-disable-next-line indent
         }, 2000 //seconds until it dissappears
       );//end settimeout
@@ -58,7 +58,7 @@ function buildNewCard(cardButton) {
         //write out inner html to blank
         clearHTML(cardButton);
         //change background to black
-        document.getElementById('leftButton').style.backgroundColor = 'black';
+        document.getElementById('leftButton').style.backgroundColor = 'rgb(92, 112, 129)';
         // eslint-disable-next-line indent
         }, 2000 //seconds until it dissappears
       );//end settimeout
@@ -74,7 +74,7 @@ function buildNewCard(cardButton) {
         //write out inner html to blank
         clearHTML(cardButton);
         //change background to black
-        document.getElementById('rightButton').style.backgroundColor = 'black';
+        document.getElementById('rightButton').style.backgroundColor = 'rgb(92, 112, 129)';
         // eslint-disable-next-line indent
         }, 2000 //seconds until it dissappears
       );//end settimeout
@@ -100,9 +100,7 @@ function buildCards(){
   htmlTextHack('p', String(gameState.currentValue), 'currentValue');
 
   if(gameState.targetValue === gameState.currentValue){
-    document.getElementById('target-circle').style.backgroundColor = '#0ED900';
-    document.getElementById('currentValue').style.backgroundImage = 'url(\'assets/pita-raptor.png\')';
-    document.getElementById('currentValue').style.backgroundSize = '175px 175px';
+    document.getElementById('target-circle').style.backgroundColor = 'rgb(145, 235, 140)';
   }
 }
 

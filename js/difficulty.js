@@ -1,6 +1,6 @@
+'use strict';
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
-'use strict';
 
 //changes the range of the new cards to limit operators
 function easy () {

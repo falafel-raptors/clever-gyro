@@ -31,6 +31,13 @@ function generateOperator() {
       randomIndex = 0;
     }
   }
+  //make division less likely, multiplication more so.
+  if (randomIndex === 3){
+    var makeDivisionLessCommon = randomInclusiveNumGen(0,4);
+    if (makeDivisionLessCommon === 0){
+      randomIndex = 2;
+    }
+  }
 
   //return operator as string
   return arrayOfOperators[randomIndex];

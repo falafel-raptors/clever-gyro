@@ -1,5 +1,6 @@
 'use strict';
 /*global gameState randomInclusiveNumGen storeInLocal clearHTML htmlTextHack */
+/* eslint-disable no-unused-vars */
 
 //generate our target number, out of our range
 function generateTarget() {

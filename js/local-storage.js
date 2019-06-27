@@ -1,5 +1,6 @@
 //JDK : library for local storage getters, setters, stringified, parsed
 /* eslint-disable no-unused-vars */
+
 'use strict';
 
 //this function stores objects in local storage, stringified.

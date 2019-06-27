@@ -1,5 +1,6 @@
 'use strict';
-/*global gameState buildNewCard storeInLocal doMath handleKeyDown generateScoreboard */
+/*global gameState buildNewCard storeInLocal doMath handleKeyDown generateScoreboard leaderBoard playAudio */
+/* eslint-disable no-unused-vars */
 
 var cards = document.getElementById('cards');
 

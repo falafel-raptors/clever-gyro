@@ -103,7 +103,6 @@ function hardReset(){
     timer: 0,
   };
   leaderBoard = [];
-
   difficulty = 'easy';
   localStorage.clear();
 }

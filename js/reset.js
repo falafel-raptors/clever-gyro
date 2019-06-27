@@ -1,5 +1,5 @@
 'use strict';
-/*global gameState generateTarget generateDeck storeInLocal */
+/*global gameState timer generateScoreboard generateTarget generateDeck storeInLocal */
 
 document.getElementById('reset').onclick = function() {
   resetGame();
@@ -20,8 +20,10 @@ function resetGame(){
     localStorage.removeItem('gameState');
     gameState.currentValue = 0;
     gameState.timer = 0;
+    generateScoreboard();
     generateTarget();
     generateDeck();
     storeInLocal('gameState', gameState);
+    document.getElementById('target-circle').style.backgroundColor = '';
   }
 }

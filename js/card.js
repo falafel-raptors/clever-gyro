@@ -98,6 +98,10 @@ function buildCards(){
   //clear and build current value div
   clearHTML('currentValue');
   htmlTextHack('p', String(gameState.currentValue), 'currentValue');
+
+  if(gameState.targetValue === gameState.currentValue){
+    document.getElementById('target-circle').style.backgroundColor = '#0ED900';
+  }
 }
 
 //first generator that builds all four cards to the screen

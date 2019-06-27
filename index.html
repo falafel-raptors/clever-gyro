@@ -15,7 +15,7 @@
     <header id="header">
       <ul>
         <li><a id="reset" value="RESET" class="links">RESET</a></li>
-        <li><p>Target Value</p><p id="target-value"></p></li>
+        <li id="target-circle"><p>Target Value</p><p id="target-value"></p></li>
         <li>
           <!-- Modal Trigger -->
           <a class="modal-trigger links" href="#modal1">RULES</a>
@@ -24,6 +24,8 @@
             <div class="modal-content">
               <h4>Game Rules</h4>
               <p>Welcome to the Game!  You have a target number you must reach.  Choose one of four cards, and get to your target.  May the odds be ever in your favor.</p>
+
+              <p>Choose your difficulty level:</p>
               <button onclick="easy()" id="easy">Easy</button>
               <button onclick="medium()" id="medium">Medium</button>
               <button onclick="hard()" id="impossible">Impossible</button>

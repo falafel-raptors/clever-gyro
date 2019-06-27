@@ -77,7 +77,11 @@ Project One for Codefellows 201, A game!
 
 ## Assets
 * Background image: https://www.vecteezy.com/vector-art/181748-abstract-forest-landscape
-
+* Clever girl audio, isolated from: https://www.youtube.com/watch?v=YKRnEOUxZm0
+* Raptor image: https://rfathead-res.cloudinary.com/image/upload/q_auto/c_pad,h_900/g_north,c_crop,h_900,w_900/c_pad,h_900,w_900/room/1109-00047_nba_ini_jurassic_world_2_blue_raptor_realbig_rm40_pdp.jpg
+* Pita image: http://www.lastingredient.com/wp-content/uploads/2015/03/pita-bread4.jpg
   
-### Trello link: https://trello.com/b/IJDxZcJo/clever-gyro
-### Prezi link: https://prezi.com/p/d2kwhelq-7tq/
+### Trello
+* link: https://trello.com/b/IJDxZcJo/clever-gyro
+### Prezi 
+* link: https://prezi.com/p/d2kwhelq-7tq/

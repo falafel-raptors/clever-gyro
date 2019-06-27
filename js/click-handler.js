@@ -30,7 +30,11 @@ function handleClick (e) {
   if(gameState.currentValue === gameState.targetValue){
     cards.removeEventListener('click', handleClick);
     document.removeEventListener('keydown', handleKeyDown, false);
+    // document.getElementById('currentValue').style.background = 'assets/pita-raptor.png';
+    document.getElementById('currentValue').style.backgroundImage = 'url(\'assets/pita-raptor.png\')';
+    document.getElementById('currentValue').style.backgroundSize = '175px 175px';
     generateScoreboard();
+    playAudio();
   }
   storeInLocal ('gameState', gameState);
 }

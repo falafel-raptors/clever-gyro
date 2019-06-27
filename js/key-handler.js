@@ -33,7 +33,10 @@ function handleKeyDown(e) {
   if(gameState.currentValue === gameState.targetValue){
     document.removeEventListener('keydown', handleKeyDown, false);
     cards.removeEventListener('click', handleClick);
+    document.getElementById('currentValue').style.backgroundImage = 'url(\'assets/pita-raptor.png\')';
+    document.getElementById('currentValue').style.backgroundSize = '175px 175px';
     generateScoreboard();
+    playAudio();
   }
   //save to local storage
   storeInLocal ('gameState', gameState);

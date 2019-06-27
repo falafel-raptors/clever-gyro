@@ -7,7 +7,7 @@ var gameState = {
   hasSeenRules: false,
   rulesView: false,
   victoryView: false,
-  targetValue: 0,
+  targetValue: 1,
   currentValue: 0,
   cardUp: {
     int: 0,
@@ -74,7 +74,7 @@ function hardReset(){
     hasSeenRules: false,
     rulesView: false,
     victoryView: false,
-    targetValue: 0,
+    targetValue: 1,
     currentValue: 0,
     cardUp: {
       int: 0,
@@ -102,8 +102,9 @@ function hardReset(){
     targetMax: 50,
     timer: 0,
   };
-  var leaderBoard = [];
-  var difficulty = 1;
+  leaderBoard = [];
+  console.log(leaderBoard);
+  difficulty = 1;
   localStorage.clear();
 }
 

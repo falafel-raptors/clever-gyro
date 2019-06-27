@@ -17,5 +17,6 @@ function resetGame(){
     generateTarget();
     generateDeck();
     storeInLocal('gameState', gameState);
+    document.getElementById('target-circle').style.backgroundColor = '';
   }
 }

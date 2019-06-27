@@ -31,6 +31,7 @@ function handleClick (e) {
     cards.removeEventListener('click', handleClick);
     document.removeEventListener('keydown', handleKeyDown, false);
     generateScoreboard();
+    document.getElementById('target-circle').style.backgroundColor = '#0ED900';
   }
   storeInLocal ('gameState', gameState);
 }

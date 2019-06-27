@@ -37,7 +37,7 @@ var gameState = {
 };
 
 var leaderBoard = [];
-var difficulty = 1;
+var difficulty = 'easy';
 
 var interval;
 function timer (){
@@ -102,8 +102,8 @@ function hardReset(){
     targetMax: 50,
     timer: 0,
   };
-  var leaderBoard = [];
-  var difficulty = 1;
+  leaderBoard = [];
+  difficulty = 'easy';
   localStorage.clear();
 }
 

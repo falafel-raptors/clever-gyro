@@ -23,16 +23,16 @@ function hard () {
   //no limit on inlcuding operators (%)
   difficulty = 'hard';
   gameState.targetMin = 100;
-  gameState.targetMax = 999;
+  gameState.targetMax = 500;
   resetGame();
 }
 
-//TODO: stub: ludicrous mode.  add the ability to limit vision of cards.
+//ludicrous mode.  add the ability to limit vision of cards.
 function ludicrous () {
   console.log('COMPLIANCE: ludicrous mode engaged.');
   //no limit on inlcuding operators (%)
   difficulty = 'ludicrous';
-  gameState.targetMin = 1000;
-  gameState.targetMax = 2000;
+  gameState.targetMin = 500;
+  gameState.targetMax = 1000;
   resetGame();
 }
